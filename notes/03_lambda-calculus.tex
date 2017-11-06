@@ -1,0 +1,620 @@
+\documentclass[11pt]{article}
+\usepackage{natbib,unatbib}
+\usepackage[nohide,twocolumn]{ulecnot}
+\usepackage{uprog}
+\usepackage{utheorem}
+\usepackage{linguex}
+	\renewcommand{\refdash}{}
+
+\pagestyle{fancy}
+\lhead{COGS 543 -- Computational Semantics}
+\chead{$\lambda$-Calculus}
+\rhead{Updated \it \today}
+\lfoot{Umut \"Ozge}
+\cfoot{}
+\rfoot{Page \thepage/\pageref{LastPage}}
+\setlength{\headheight}{13.6pt}
+
+\usepackage{tikz-qtree}
+
+\begin{document}
+
+
+\section{Introduction} Here are two functions:
+
+\begin{align}
+\label{f} f(x) & = x + 2\\ 
+\label{g}g(x) & = x^2
+\end{align}
+
+The composition of these functions is expressed as:
+
+\begin{align}
+f\circ g = f(g(x))\label{fog}
+\end{align}
+
+
+\xref{fog} is of no use without looking up the definitions of the names $f$ and $g$ in \xref{f} and \xref{g}. Furthermore, it is simply impossible to define a function that takes two functions as arguments and gives a third function which is the composition of the first two. Actually, it is impossible to define any higher order function within the language of our expressions -- i.e.\ numbers, arithmetic operators and parentheses.
+
+Given a formal language -- the language of arithmetic in our case, lambda calculus adds to the language the lambda operator `$\lambda$' and the dot `.'. This additions allow one to write anonymous functions who do not bear names like $f$ or $g$, by which you look up definitions. Instead, in lambda calculus, the name and the function definition are one and the same entities. Here is how functions in \xref{f} and \xref{g} are rendered in lambda calculus:
+
+\begin{align}
+\label{lf} & (\lambda x.x + 2)\\ 
+\label{lg} & (\lambda x.x^2)
+\end{align}
+
+Application of a function to its argument is depicted by concatenating the function and its argument and enclosing both in a parentheses. To compute the result of application, you substitute the argument to its place as in standard functions and get rid of the lambda, the variable and the dot.
+
+\begin{align}
+\label{af} & ((\lambda x.x + 2) 8)\\ 
+ & = 8 +2  = 10\nonumber
+\end{align}
+
+\begin{align}
+\label{ag} & ((\lambda x.x^2) 8)\\
+& = 8^2 = 64\nonumber
+\end{align}
+
+So far everything appears as a little more cryptic way of defining functions and computing the result of applying a function to its argument. The real power of lambda calculus becomes visible when you apply functions to other functions, in exactly the same way you apply them to non-function arguments. We will illustrate this over function composition. Things will git a little complicated at this point; either go very slowly, or have a first pass, read on and come back. In either case you need to use pencil and paper to understand the transitions between forms.  Now let us have the following higher order function that composes two functions -- the lambda calculus way of having $f_1\circ f_2$:
+
+\begin{align}
+(\lambda f_1.(\lambda f_2.(\lambda z.(f_1(f_2z))))
+\end{align}
+
+First apply this to $(\lambda x. x + 2)$:
+
+\begin{align}
+& ((\lambda f_1.(\lambda f_2.(\lambda z.(f_1(f_2z)))) (\lambda x. x +2))\\
+=& (\lambda f_2.(\lambda z.((\lambda x. x +2)(f_2z)))) \nonumber
+\end{align}
+
+Now apply this result to the second function $(\lambda y. y^2)$:
+
+\begin{align}
+&  ((\lambda f_2.(\lambda z.((\lambda x. x +2)(f_2z))))(\lambda y. y^2)) \\
+=& (\lambda z.((\lambda x. x+2)((\lambda y. y^2)z))) \nonumber
+\end{align}
+
+We obtained the composition of the functions defined in \xref{f} and \xref{g}. To see that this is indeed the case, apply this composite to an argument, say 6:
+
+\begin{align}
+\label{faint} & ((\lambda z.((\lambda x. x+2)((\lambda y. y^2)z))) 6)\\
+&=  ((\lambda x. x+2)((\lambda y. y^2)6))\nonumber 
+\end{align}
+
+If you look carefully, you will realize two more patterns in the form of $(f a)$ -- a function $f$ applied to argument $a$ -- in the result we obtained in \xref{faint}. The one that is relatively easier to see is  
+\begin{align}
+\label{occ1} ((\lambda y. y^2)6)
+\end{align}
+
+if you perform this application you will obtain 36 as result. Replacing the occurrence of \xref{occ1} in \xref{faint} with 36 will give,
+
+\begin{align}
+& ((\lambda x. x+2)36)\\
+& = 36+2 = 38 \nonumber
+\end{align}
+
+
+We now turn to a detailed and formal characterization of the concepts we encountered.
+
+
+\section{The set of lambda terms}
+
+From here on, we take a rather abstract stance towards lambda calculus.  The discussion will apply to any domain of use, not just arithmetic. Try to perceive the lambda calculus as a system of manipulating expressions constructed from a set of names, the lambda, the dot, and left and right parentheses, which we call \uterm{lambda terms}. Also refrain from assuming that $x, y, z$ stand for variables, $f, g, h$ for functions, $a, b, c$  for constants, etc. Names are just names; although our use may be suggestive at times, there is no necessary association between a name and the type of object it stands for.
+
+\begin{udefinition}[Lambda terms]\label{dfexp}
+Let $A=\{ a,b,\ldots,z\}$ be the set of \uterm{names}, we extend the set by subscripts as we need so that we have an infinite set of names.
+
+\begin{itemize}
+\item[i.] all names are lambda terms; 
+\item[ii.] if $\omega_1$ and $\omega_2$ are lambda terms, so is $(\omega_1\omega_2)$; \hfill (concatenation/application)
+\item[iii.] if $\omega$ is a lambda term and $\alpha$ is a name, then
+$(\lambda\alpha.\omega)$ is an expression; \hfill (abstraction) 
+\item[iv.] nothing else is an expression.
+\end{itemize}
+\qed
+\end{udefinition} 
+
+We usually shorten ``lambda term'' to ``term''. Given a name $\alpha$, we call the expression $\lambda\alpha$ a ``lambda binder''.
+
+
+\begin{uexample}\label{fullex}
+Some example terms:
+\renewcommand{\arraycolsep}{6pt}
+\renewcommand{\arraystretch}{2}
+
+$$
+\begin{array}{cccc}
+x & (xy) & (x(yz))  & ((xy)z) \\
+(\lambda x.x) & (\lambda y.(\lambda x.x)) & (\lambda z.(x(\lambda y.(yz)))) & (x(\lambda z.(\lambda y.(yz))))\\
+(x(\lambda x.x)) & ((\lambda y.(\lambda x.x))(\lambda x.x)) & (((\lambda y.(\lambda x.x))(\lambda x.x))(xy)) & ((x(yz))((xy)z))
+\end{array}
+$$
+
+\qed
+\end{uexample}
+
+Once again note that in lambda calculus we write $(f x)$ (simplified to $fx$) rather than the usual $f(x)$
+to represent the application of function $f$ to the argument $x$.
+
+\section{Notational conventions}
+\label{scnotcon}
+
+\begin{itemize}
+
+\item[A.] Omit outer parentheses.
+
+\item[B.] Concatenation of terms associate to left:    
+
+\begin{align*}
+\omega_1\omega_2\omega_3\ldots\omega_n & \equiv (\ldots((\omega_1\omega_2)\omega_3)\ldots\omega_n)\\
+fxyz & \equiv   (((fx)y)z)\\
+fx(yz) & \equiv   ((fx)(yz))\\
+f(xyz) & \equiv   (f((xy)z))\\
+f(xy)z & \equiv   ((f(xy))z) 
+\end{align*}
+
+\item[C.] The scope of dot extends to right until the first right parenthesis whose matching pair falls to the right of the dot:
+
+\begin{align*}
+(\lambda x.xx)y & \equiv ((\lambda x.xx)y) \not\equiv \lambda x.xxy\\
+\lambda x.xyz & \equiv (\lambda x.xyz) \not\equiv (\lambda x. x)yz
+\end{align*}
+
+\item[D.] Stacked lambda binders associate to right, and dots between lambda binders are deleted:
+\begin{align*}
+\lambda \alpha_1\lambda \alpha_2\lambda \alpha_3\ldots\lambda \alpha_n.\omega &\equiv (\lambda\alpha_1.(\lambda\alpha_2.(\lambda\alpha_3\ldots(\lambda\alpha_n.\omega)\ldots)))\\
+\lambda f \lambda x.f(fx)  &\equiv  (\lambda f.(\lambda x.(f(fx))))\\
+\lambda f.(\lambda x\lambda y.xyy)zf & \equiv (\lambda f.(((\lambda x.(\lambda y.((xy)y)))z)f))
+\end{align*}
+
+\end{itemize}
+
+\begin{uexample}
+The terms in Example~\ref{fullex} in simplified form:
+
+\begin{align*}
+(xy) &\equiv xy\\
+(x(yz)) &\equiv x(yz)\\
+((xy)z) &\equiv xyz\\
+(\lambda x.x) &\equiv \lambda x.x\\
+(\lambda y.(\lambda x.x)) &\equiv \lambda y.\lambda x.x\\
+(\lambda z.(x(\lambda y.(yz)))) &\equiv \lambda z.(x(\lambda y.yz))\\
+(x(\lambda z.(\lambda y.(yz)))) &\equiv x(\lambda z.\lambda y.yz)\\
+(x(\lambda x.x)) &\equiv x(\lambda x.x)\\
+((\lambda y.(\lambda x.x))(\lambda x.x)) &\equiv (\lambda y\lambda x.x)\lambda x.x\\
+(((\lambda y.(\lambda x.x))(\lambda x.x))(xy)) &\equiv (\lambda y\lambda x.x)(\lambda x.x)(xy)\\
+((x(yz))((xy)z)) &\equiv x(yz)(xyz)
+\end{align*}
+\qed
+\end{uexample}
+
+Here are some exercises from \cite{selinger13} to train your hand on notational conventions:
+
+\begin{uexercise}
+Simplify the following terms by removing parentheses and dots using the conventions above:
+\begin{itemize}
+\item[i.] $(\lambda x.(\lambda y.(\lambda z.((xz)(yz)))))$
+\item[ii.] $(((ab)(cd))((ef)(gh)))$
+\item[iii.] $(\lambda x.((\lambda y.(yx))(\lambda v.v)z)u)(\lambda w.w)$
+\end{itemize}
+\qed
+\end{uexercise}
+
+\begin{uexercise}
+Restore the parentheses to the following terms:
+\begin{itemize}
+\item[i.] $xxxx$  
+\item[ii.] $\lambda x.x\lambda y.y$ 
+\item[iii.] $\lambda x.(x\lambda y.yxx)x$ 
+\end{itemize}
+\qed
+\end{uexercise}
+
+\section{Bondage and freedom}
+
+\subsection{Expressions as binary trees}
+
+First observe that every compound term (=terms that are more complicated than a name) corresponds to a binary tree; this is obvious if you take the steps (ii) and (iii) in Definition~\xref{dfexp} as an instruction to form a binary branching tree. Here are some examples:
+
+\smallskip
+\ex.
+\parbox[t]{0.2\textwidth}{
+a. \Tree [.$(\lambda z.(x(\lambda y.(yz))))$ 
+			[.$\lambda z$ ]
+			[.$(x(\lambda y.(yz)))$ 
+				[.$x$ ]	
+				[.$(\lambda y.(yz))$ 
+					[.$\lambda y$ ]					
+					[.$(yz)$ 
+						[.$y$ ]
+						[.$z$ ]
+					]					
+				]
+			]
+]
+}
+\parbox[t]{0.22\textwidth}{
+b. \Tree [.$(\lambda f.(\lambda g.(\lambda x.((fx)(gx)))))$ 
+		[.$\lambda f$ ]
+		[.$(\lambda g.(\lambda x.((fx)(gx))))$ 
+			[.$\lambda g$ ]
+			[.$(\lambda x.((fx)(gx)))$ 
+				[.$\lambda x$ ]	
+				[.$((fx)(gx))$
+					[.$(fx)$ 
+						[.$f$ ]
+						[.$x$ ]
+					]
+					[.$(gx)$ 
+						[.$g$ ]
+						[.$x$ ]
+					]
+				]
+			]
+		]
+]
+}
+
+
+Now the same examples simplified by the conventions of Section~\ref{scnotcon}:
+
+
+\ex.\label{extree}
+\parbox[t]{0.2\textwidth}{
+a. \Tree [.$\lambda z.x(\lambda y.yz)$ 
+			[.$\lambda z$ ]
+			[.$x(\lambda y.yz)$ 
+				[.$x$ ]	
+				[.$(\lambda y.yz)$ 
+						[.$\lambda y$ ]					
+					[.$yz$ 
+						[.$y$ ]
+						[.$z$ ]
+					]					
+				]
+			]
+]
+}
+\parbox[t]{0.23\textwidth}{
+b. \Tree [.$\lambda f\lambda g\lambda x.fx(gx)$ 
+		[.$\lambda f$ ]
+		[.$\lambda g\lambda x.fx(gx)$ 
+			[.$\lambda g$ ]
+			[.$\lambda x.fx(gx)$ 
+				[.$\lambda x$ ]	
+				[.$fx(gx)$
+					[.$fx$ 
+						[.$f$ ]
+						[.$x$ ]
+					]
+					[.$gx$ 
+						[.$g$ ]
+						[.$x$ ]
+					]
+				]
+			]
+		]
+]
+}
+
+
+We need some auxiliary definitions before we define bondage and freedom.  
+
+\medskip
+\noindent {\bf Occurrence}\\
+The notions of bondage and freedom are defined for \uterm{occurrences} of names and lambda binders. Each leaf\footnote{Leaves are nodes without children.} in the construction tree of a lambda term s either an occurrence of a name or a lambda binder. Names also occur as part of lambda binders, but in the technical sense we define here occurrence of a name does not include such cases. For instance the name $x$ has 1 occurrence in \xxref{extree}{a} and 2 occurrences in \xxref{extree}{b}.
+
+\medskip
+\noindent {\bf Step}\\
+In traversing a tree, going from one node to an adjacent\footnote{Two nodes are adjacent if there exists a line connecting them without any nodes in between.} node is one \uterm{step}.
+
+\medskip
+\noindent {\bf Bondage}\\
+Given a term $\Gamma$ and a name $\alpha$, an occurrence of $\alpha$ is \uterm{bound} in $\Gamma$ by an occurrence of a lambda binder  $\lambda\alpha$ iff one can go from the name to the lambda term in $n$ steps and there is no other occurrence of $\lambda\alpha$ such that it takes fewer than $n$ steps to reach from the name to that occurrence.
+
+Given a term $\Gamma$ and a name $\alpha$, an occurrence of $\alpha$ is \uterm{bound} in $\Gamma$ iff there exists at least one occurrence of a lambda binder $\lambda\alpha$ in $\Gamma$ binding that occurrence of $\alpha$  in $\Gamma$.
+
+Note that bondage is defined between occurrences of names and lambda binders; therefore, it does not make sense to ask whether $\alpha$ is bound in a term $\Gamma$ or not; one has to specify which occurrence of $\alpha$ s/he is talking about.
+
+\medskip
+\noindent {\bf Freedom}\\
+Given an expression $\Gamma$ and a name $\alpha$, an occurrence of $\alpha$ is \uterm{free} in $\Gamma$, if it is not bound by any occurrence of a lambda binder in $\Gamma$. 
+
+
+% It will be useful to define a function \sysm{FN}, which gives the set of free names in a term:
+% 
+% \begin{udefinition}[Set of free names.]
+% 
+% The function \sysm{FN} that maps the set of lambda terms to the power set of the set of names: 
+% \begin{itemize}
+% \item[i.] \sysm{FN (\omega) = \{\omega \}  }, if $\omega$ is a name;
+% \item[ii.] \sysm{FN ((\omega_1\omega_2)) = FN(\omega_1) \cup FN(\omega_2)};
+% \item[iii.] \sysm{FN (\lambda \alpha.\omega) = FN(\omega) - \{ \alpha\}}.
+% \end{itemize}
+% \qed
+% \end{udefinition}
+% 
+
+\begin{uexample}
+\begin{itemize}
+\item[]
+\item In \xxref{extree}{a}, there is a single occurrence of $x$ and it is free in \xxref{extree}{a}
+\item In \xxref{extree}{b}, there is no free occurrence of a name; all the occurrences of all the names are bound by some occurrence of a lambda term.
+\item Our definitions allow for expressions like $\lambda x\lambda k.c y$, where all the occurrences of all names are free and none of the lambda terms bind any name. 
+\item In $\lambda x\lambda y.z (y x) y $ both occurrences of $y$ are bound by $\lambda y$, whereas in $(\lambda x\lambda y.z (y x)) y $, the second $y$ (counting from left to right) is free.
+\end{itemize}
+\qed
+\end{uexample}
+
+
+
+\section{$\alpha$-equivalence}
+
+The functions $\lambda x.x$ and $\lambda y.y$ are one and the same functions; they just do the same thing using different names. Similarly for $\lambda f\lambda g.fa(ga)$ and $\lambda g\lambda f.ga(fa)$. We express this relation of being alphabetical variants of the same term as \uterm{\sysm{\mathbf{\alpha}}-equivalence}. Symbolically,
+
+$$
+\lambda f\lambda g.fa(ga) \equiv_\alpha \lambda g\lambda f.ga(fa)
+$$
+
+Again think of $\alpha$-equivalence over trees:
+
+\parbox[t]{0.2\textwidth}{
+\Tree [.$\lambda f\lambda g.fa(ga)$ 
+		[.$\lambda f$ ]
+		[.$\lambda g.fa(ga)$ 
+			[.$\lambda g$ ]	
+			[.$fa(ga)$ 
+					[.$fa$ $f$ $a$ ]	
+					[.$ga$ $g$ $a$ ]
+			]
+		]
+]
+}
+\parbox[t]{0.2\textwidth}{
+\Tree [.$\lambda g\lambda f.ga(fa)$ 
+		[.$\lambda g$ ]
+		[.$\lambda f.ga(fa)$ 
+			[.$\lambda f$ ]	
+			[.$.ga(fa)$ 
+					[.$ga$ $g$ $a$ ]	
+					[.$fa$ $f$ $a$ ]
+			]
+		]
+]
+}
+
+The terms have structurally identical trees with identical binding relations. The only difference between the two concerns the bound names.
+Here is a formal definition:
+
+\begin{udefinition}[$\alpha$-equivalence]
+Let $\Lambda_1$ and $\Lambda_2$ are lambda terms with construction trees $\tau_1$ and $\tau_2$;\\
+and let $\nu_1$ and $\nu_2$ be sets of nodes of $\tau_1$ and $\tau_2$, respectively;\\
+$\Lambda_1$ and $\Lambda_2$ are $\alpha$-equivalent iff
+there exists a one to one correspondence $c$ between $\nu_1$ and $\nu_2$ such that,
+\begin{itemize}
+\item for all nodes $i,j$ in $\nu_1$, $i$ immediately dominates\footnote{A node $\nu_1$ immediately dominates node $\nu_2$ iff it takes only one step going down from $\nu_1$ to $\nu_2$} $j$ iff $c(i)$ immediately dominates $c(j)$; 
+\item for all nodes $i$ in $\nu_1$, $i$ is some name $\alpha$, free in $\tau_1$, iff $c(i)$ is some name $\alpha$, free in $\tau_2$;
+\item for all nodes $i,j$ in $\nu_1$, $i$ is a lambda binder binding $j$ iff $c(i)$ is a lambda binder binding $c(j)$.
+\end{itemize}
+\qed
+\end{udefinition}
+
+
+The above definition gives a declarative specification of what does it mean for two terms to be $\alpha$-equivalent. It does not tell how to go about obtaining an $\alpha$-equivalent term from a given one. The essence of $\alpha$-equivalence is to obtain a term that has the same configuration and binding relations with the original, but possibly differing in some bound names. This looks like a renaming operation where you change the name on a lambda binder and all the occurrences of that name bound by the binder, crucially without touching any free names. Care needs to be taken, however, in renaming bound variables. For instance take the following term:
+
+\begin{align}\label{alphaorg}
+\lambda x.z(\lambda y.yx)
+\end{align}
+
+You want to replace the name $x$ with $z$. If you replace all the occurrences, you would obtain,
+
+\begin{align}\label{alphawrong}
+\lambda z.z(\lambda y.yz)
+\end{align}
+
+where you made the first $z$, which was free in \xref{alphaorg}, accidentally bound in \xref{alphawrong}. In other words, you failed to obtain an $\alpha$-equivalent term:
+
+$$
+\lambda x.z(\lambda y.yx)\not\equiv_\alpha \lambda z.z(\lambda y.yz)
+$$
+
+
+Likewise, renaming $x$ to $y$ would again yield a non-$\alpha$-equivalent term:
+
+$$
+\lambda x.z(\lambda y.yx)\not\equiv_\alpha \lambda y.z(\lambda y.yy)
+$$
+
+
+At this point one way to avoid such accidental bondages is to always rename to a name that is not in the term at all. But this move misses the general concept of $\alpha$-equivalence. Observe that it is legitimate to rename $y$ to $z$ in \xref{alphaorg}:
+
+$$
+\lambda x.z(\lambda y.yx)\equiv_\alpha \lambda x.z(\lambda z.zx)
+$$
+
+We take another strategy for avoiding accidental bondage. We again make use of trees and define renaming as a single step procedure that targets a specific occurrence of a lambda binder. Here is a rough algorithm:
+
+\begin{ualgorithm}[Single shot rename]
+\label{renamealg}
+\begin{algorithmic}
+\item[]
+\item[]
+\Function{Rename}{\sysm{term, binder, name}} 
+\State \sysm{nodes \gets } nodes bound by \sysm{binder} 
+\For{\sysm{node} in \sysm{nodes} } 
+\State replace the name on \sysm{node} with \sysm{name}
+\State check for new binders of \sysm{node}
+ 	 	\If{any new binder dominated by \sysm{binder} } 
+ 	 		\State ERROR
+ 	 	\EndIf	
+\EndFor
+\State replace the name on \sysm{binder} with \sysm{name}
+\If{new bound nodes not in \sysm{nodes} are created }
+\State ERROR!
+\EndIf
+\EndFunction
+\end{algorithmic}
+\qed
+\end{ualgorithm}
+
+Two terms $\Lambda_1$ and $\Lambda_2$ are $\alpha$-equivalent iff one can be obtained from the other by zero or more applications of Algorithm~\xref{renamealg}.  
+
+\section{Substitution}
+
+We will see a process quite similar to renaming. In renaming you alphabetically change a lambda binder and the names it binds. You do this carefully so that you do not introduce binding relations that were not present among the nodes of the original tree. The process of \uterm{substitution} again operates on a lambda term, but replaces all \emph{free} occurrences of a name with a \emph{lambda term}; therefore, substitution may alter the tree structure of the lambda term it operates on. Again, care is needed not to accidentally bind the free names in the substituted term. The substitution of a term $\nu$ for $\alpha$ in a term $\Lambda$ is denoted as:
+$$
+\subs{\Lambda}{\nu}{\alpha}
+$$
+
+and defined via induction as:
+
+\begin{udefinition}[Substitution]
+
+\begin{itemize}
+\item[]
+\item[i.] $\subs{\alpha}{\nu}{\alpha}= \nu$;
+\item[ii.] $\subs{(\omega_1\omega_2)}{\nu}{\alpha}= (\subs{\omega_1}{\nu}{\alpha}\subs{\omega_2}{\nu}{\alpha})$;
+\item[iii.] $\subs{(\lambda \alpha.\omega)}{\nu}{\alpha}= (\lambda \alpha.\omega)$;
+\item[iv.] $\subs{(\lambda \gamma.\omega)}{\nu}{\alpha} = (\lambda \gamma.\subs{\omega}{\nu}{\alpha})$, where $\gamma\neq\alpha$ and $\gamma$ is not free in $\nu$.
+
+\end{itemize}
+
+\qed
+\end{udefinition}
+
+Observe that substitution can get blocked in clause (iv). For instance take,
+
+\begin{align}
+& \subs{(k(\lambda z.zx))}{(\lambda y.zy)}{x}\\
+ \equiv & \, \subs{k}{(\lambda y.zy)}{x}\subs{(\lambda z.zx)}{(\lambda y.zy)}{x}  \nonumber\\
+ \equiv & \, k \subs{(\lambda z.zx)}{(\lambda y.zy)}{x} \nonumber
+\end{align}
+
+The substitution operation gets blocked at $\subs{(\lambda z.zx)}{(\lambda y.zy)}{x}$, since $z$ is free in $(\lambda y.zy)$. What needs to be done at such situations is to switch to an $\alpha$-equivalent term. First, 
+
+\begin{align}
+& (k(\lambda z.zx)) \equiv_\alpha (k(\lambda f.fx)) 
+\end{align}
+
+then
+
+\begin{align}
+& \subs{(k(\lambda f.fx))}{(\lambda y.zy)}{x}\\
+ \equiv & \, \subs{k}{(\lambda y.zy)}{x}\subs{(\lambda f.fx)}{(\lambda y.zy)}{x}  \nonumber\\
+ \equiv & \, k (\lambda f.\subs{(fx)}{(\lambda y.zy)}{x}) \nonumber\\
+ \equiv & \, k (\lambda f.f(\lambda y.zy))\nonumber
+\end{align}
+
+\section{$\beta$-reduction}
+\ezimeti{
+\item An expression of the form $(\lambda \alpha.\gamma)\omega$ is called a
+\uterm{$\beta$-redex}. 
+
+\item It can be \uterm{$\beta$-reduced} to $\subs{\gamma}{\omega}{\alpha}$,
+called a \uterm{reduct}, if $\omega$ is free for $\alpha$ in $\gamma$.
+
+\item  A lambda expression can be reduced by turning all the redexes to reducts,
+which results in a \uterm{$\beta$-normal} form.
+
+\item Some example reductions:
+\begin{align*}
+(\lambda f.fx)g  & \breduce gx \\
+(\lambda f.fx)ga  & \breduce gxa \\
+(\lambda f.fx)(ga) & \breduce gax \\
+(\lambda f\lambda x.fx)g a & \breduce ga \\
+%(\lambda x\lambda y \lambda z.x(yz))f & \breduce \\
+\end{align*}
+
+\item There may be more than one redex in a
+expression:
+
+\begin{align*}
+(\lambda x.y)((\lambda z.zz)(\lambda w.w)) & \breduce (\lambda x.y)((\lambda w.w)(\lambda w.w))\\
+											& \breduce (\lambda x.y)(\lambda w.w)
+											& \breduce y 
+\end{align*}
+
+\item Another reduction of the same expression would be:
+
+\begin{align*}
+(\lambda x.y)((\lambda z.zz)(\lambda w.w)) & \breduce y 
+\end{align*}
+
+\item The first is called the \uterm{applicative order} reduction; the second is
+called the \uterm{normal order} reduction.
+
+\item Reduce the following expressions:
+\begin{align*}
+(\lambda x. m x)j\\
+(\lambda y. y j)m\\
+(\lambda x.\lambda y. y(y x))jm\\
+(\lambda y.y j)(\lambda x. m x)\\
+(\lambda x. xx)(\lambda y. yyy)
+\end{align*}
+}
+
+
+
+
+
+% \item Reduce the following expression in both applicative and normal order:
+% 
+% \begin{align*}
+% (\lambda p_1\lambda p_2. p_1 0 \land p_2)(\lambda x. x\not= 0)((\lambda y.\frac{5}{y} = 0)0)
+% \end{align*}
+
+
+
+\section{Lambda calculus in action: some examples}
+
+\subsection{Logic}
+\ezimeti{
+\item Let's define the truth values:
+
+\begin{align*}
+\combf{T} \equiv \lambda x\lambda y.x\\
+\combf{F} \equiv \lambda x\lambda y.y
+\end{align*}
+
+\item Verify that $\lambda x\lambda y.yxy$ behaves like \emph{and} in prefix
+notation (i.e. $\land p q$). 
+
+\item Can you think of lambda expressions for $\lor$ and $-$?
+\item What about an if-then-else function that applies to the test, a function
+to execute if the test is true and a function to execute if the test is false.     
+
+}
+\subsection{Arithmetic}
+
+\ezimeti{
+
+\item Number can be represented as lambda expressions in the following way:
+\begin{align*}
+0 & \equiv \lambda f\lambda x.x\\
+1 & \equiv \lambda f\lambda x.fx\\
+2 & \equiv \lambda f\lambda x.f(fx)\\
+3 & \equiv \lambda f\lambda x.f(f(fx))\\
+\vdots
+\end{align*}
+
+
+\item A successor function which returns $n+1$ given $n$ is:
+\begin{align*}
+\mathbf{S}\equiv \lambda a\lambda f\lambda x. f(afx)
+\end{align*}
+
+\item Here are addition and multiplication (again in prefix notation); verify
+that they do what they are meant to do. 
+
+\begin{align*}
+\mathbf{+} & \equiv \lambda a\lambda b\lambda f\lambda x.af(bfx)\\
+\mathbf{\times} & \equiv \lambda a\lambda b\lambda f.a(bf)
+\end{align*}
+
+}
+
+\cite{selinger13}
+\bibliographystyle{plain}
+\bibliography{ozge}
+\end{document}
