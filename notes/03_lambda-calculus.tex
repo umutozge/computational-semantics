@@ -474,16 +474,17 @@ and defined via induction as:
 \begin{itemize}
 \item[]
 \item[i.] $\subs{\alpha}{\nu}{\alpha}= \nu$;
-\item[ii.] $\subs{(\omega_1\omega_2)}{\nu}{\alpha}= (\subs{\omega_1}{\nu}{\alpha}\subs{\omega_2}{\nu}{\alpha})$;
-\item[iii.] $\subs{(\lambda \alpha.\omega)}{\nu}{\alpha}= (\lambda \alpha.\omega)$;
-\item[iv.] $\subs{(\lambda \gamma.\omega)}{\nu}{\alpha} = (\lambda \gamma.\subs{\omega}{\nu}{\alpha})$, where $\gamma\neq\alpha$ and $\gamma$ is not free in $\nu$.
+\item[ii.] $\subs{\gamma}{\nu}{\alpha}= \gamma$, if $\gamma$ is a name and $\gamma\neq\alpha$;
+\item[iii.] $\subs{(\omega_1\omega_2)}{\nu}{\alpha}= (\subs{\omega_1}{\nu}{\alpha}\subs{\omega_2}{\nu}{\alpha})$;
+\item[iv.] $\subs{(\lambda \alpha.\omega)}{\nu}{\alpha}= (\lambda \alpha.\omega)$;
+\item[v.] $\subs{(\lambda \gamma.\omega)}{\nu}{\alpha} = (\lambda \gamma.\subs{\omega}{\nu}{\alpha})$, where $\gamma\neq\alpha$ and $\gamma$ is not free in $\nu$.
 
 \end{itemize}
 
 \qed
 \end{udefinition}
 
-Observe that substitution can get blocked in clause (iv). For instance take,
+Observe that substitution can get blocked in clause (v). For instance take,
 
 \begin{align}
 & \subs{(k(\lambda z.zx))}{(\lambda y.zy)}{x}\\
