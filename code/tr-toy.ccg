@@ -1,0 +1,60 @@
+% nominals
+% --------
+
+ali		n	:=	s/(s\np)	:	\p.p !ali;
+
+mudur	n	:=	s\np	:	\x\s.!director x s;
+
+% intransitives
+% -------------
+
+delir	v	:=	s\np	:	\x\s.!go-mad x s;
+
+% quantifiers 
+% -----------
+
+%% ***use an unused variable for every quantifier entry*** 
+%% ccglab will not realize that they are bound by quantifiers
+%% and will treat them as lambda variables in case there is a "binding" lambda; 
+%% things also get complicated if you have more than one quantifier with the same variable
+
+her	q	:=	s/(s\np)/*(s\np)	:	\p\q\s.(!farall z (!cond (p z s) (q z s)));
+
+bir	q	:=	s/(s\np)/*(s\np)	:	\p\q\s.(!exists y (!and (p y s) (q y s)));
+
+
+% infl
+% ----
+
+dh	f	:=	(s\np)\*(s\np)	:	\p\x\t.(!exists k (!and (!before t k) ((p x) k)));
+dh	f	:=	s\*s	:	\p\t.(!exists k (!and (!before t k) (p k)));
+
+mhs	f	:=	(s\np)\*(s\np)	:	\p\x\t.(!exists w (!and (!before t w) ((p x) w) (!within (!result ((p x) w)) t)));
+mhs	f	:=	s\*s	:	\p\t.(!exists w (!and (!before t w) (p w) (!within (!result (p w)) t)));
+
+
+% period 
+% ------
+
+% (nokta) -- I'm-done-with-what-I's-gonna-say-for-the-moment operator
+
+assert	op	:=	s\*s	:	\p.p !now;
+
+
+% definiteness
+% ------------
+
+% a placeholder for case, maybe 
+% e.g. '(mudur def) will give you 'the director' reading.
+
+def	f	:=	s/(s\np)\*(s\np)	:	\p\q\s.(!the x (!and (p x s) (q x s))); 
+
+% adjectives
+% ----------
+
+%% intersective/extensional
+miyop	adj	:=	(s\np)/(s\np)	:	\p\x\s.(!and (!myopic x s) (p x s)); 
+
+%% intensional
+onceki	adj	:=	(s\np)/(s\np)	:	\p\x\s.(!exists v (!and (!before s v) (p x v ) (!not (p x s))));
+mustakbel	adj	:=	(s\np)/(s\np)	:	\p\x\s.(!exists v (!and (!before v s) (p x v ) (!not (p x s))));
