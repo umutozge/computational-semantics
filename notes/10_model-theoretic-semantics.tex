@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[11pt,a4paper,draft]{article}
 
 \usepackage{times}
 \usepackage{umut,utheorem,uprog}
@@ -10,6 +10,7 @@
 \title{Introduction to model-theoretic semantics\\ \small (Lecture notes for COGS 543)}
 \author{Umut \"Ozge}
 \date{\today\\ \texttt{Draft 1.0}}
+
 \begin{document}
 \maketitle
 
@@ -248,8 +249,8 @@ It is time to state the semantics of $L$ with respect to a model $\mathcal{M}$ a
 \item[i.] $\interpp{\alpha} = g(\alpha)$, if $\alpha \in V$
 \item[ii.] $\interpp{\alpha} = I(\alpha)$, if $\alpha \in C \cup K$
 \item[iii.] $\interpp{(\alpha\beta)} = \interpp{\alpha}(\interpp{\beta})$
-\item[iv.]$\interpp{(\forall \alpha_{\tau} \beta)} = 1$ iff for all $d \in D_{\tau}$, $\interp{\beta}_{\mathcal{M},\fnex{g}{x}{d}} = 1$ 
-\item[v.] $\interpp{(\exists \alpha_{\tau} \beta)} = 1$ iff there is at least one $d \in D_{\tau}$, $\interp{\beta}_{\mathcal{M},\fnex{g}{x}{d}} = 1$ 
+\item[iv.]$\interpp{(\forall \alpha_{\pi} \beta)} = 1$ iff for all $d \in D_{\pi}$, $\interp{\beta}_{\mathcal{M},\fnex{g}{x}{d}} = 1$ 
+\item[v.] $\interpp{(\exists \alpha_{\pi} \beta)} = 1$ iff there is at least one $d \in D_{\pi}$, $\interp{\beta}_{\mathcal{M},\fnex{g}{x}{d}} = 1$ 
 \end{itemize}
 
 \qed
@@ -273,7 +274,7 @@ I    = & \{(mary',\mtob{mary}), (pedro',\mtob{pedro}),\\
        & (jealous',\{(\mtob{mary},\{(\mtob{rosinante}, 0), (\mtob{pedro}, 1), (\mtob{mary}, 0)\}),\\
 	   & \quad\quad\quad\quad (\mtob{pedro}, \{(\mtob{rosinante}, 1), (\mtob{pedro}, 0), (\mtob{mary}, 0)\}), \\
 	   & \quad\quad\quad\quad (\mtob{rosinante}, \{(\mtob{rosinante}, 0), (\mtob{pedro}, 0), (\mtob{mary}, 1)\})\})\}\\
-g	 = & \{(x,\mtob{rosinante}),(y,\mtob{rosinante}\}
+g	 = & \{(x,\mtob{rosinante}),(y,\mtob{rosinante})\}
 \end{align*}
 
 We do not provide the interpretations of logical constants, which are taken to be the standard logical connectives.
@@ -340,9 +341,6 @@ To compute the value of \xref{lovesxmary}, we need,
 \interp{mary'}_{\mathcal{M},\fnex{g}{x}{\mtob{mary}}} = I(mary') = \mtob{mary}
 \end{align}
 feeding this into \xref{lovesxval}, we get 0 as the value of \xref{lovesxmary}. Feeding 0 to the interpretation of $\cond$ would yield a function $\{(0,1), (1,1)\}$. The next task is to compute the value for the consequent of the conditional with the extended environment and completing the iteration for $x\mapsto \mtob{mary}$. The iteration has to go on until we are out of objects in $D_e$. The completion of the evaluation is left as an exercise.
-
-
-
 
 %\bibliography{ozge}
 \end{document}
