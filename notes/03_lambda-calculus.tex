@@ -6,7 +6,6 @@
 \usepackage{linguex}
 	\renewcommand{\refdash}{}
 
-\pagestyle{fancy}
 \lhead{COGS 543 -- Computational Semantics}
 \chead{$\lambda$-Calculus}
 \rhead{Updated \it \today}
@@ -36,7 +35,7 @@ f\circ g = f(g(x))\label{fog}
 
 \xref{fog} is of no use without looking up the definitions of the names $f$ and $g$ in \xref{f} and \xref{g}. Furthermore, it is simply impossible to define a function that takes two functions as arguments and gives a third function which is the composition of the first two. Actually, it is impossible to define any higher order function within the language of our expressions -- i.e.\ numbers, arithmetic operators and parentheses.
 
-Given a formal language -- the language of arithmetic in our case, lambda calculus adds to the language the lambda operator `$\lambda$' and the dot `.'. This additions allow one to write anonymous functions who do not bear names like $f$ or $g$, by which you look up definitions. Instead, in lambda calculus, the name and the function definition are one and the same entities. Here is how functions in \xref{f} and \xref{g} are rendered in lambda calculus:
+Given a formal language -- the language of arithmetic in our case -- lambda calculus adds to the language the lambda operator `$\lambda$' and the dot `.'. This additions allow one to write anonymous functions who do not bear names like $f$ or $g$, by which you look up definitions. Instead, in lambda calculus, the name and the function definition are one and the same entities. Here is how functions in \xref{f} and \xref{g} are rendered in lambda calculus:
 
 \begin{align}
 \label{lf} & (\lambda x.x + 2)\\ 
@@ -55,7 +54,7 @@ Application of a function to its argument is depicted by concatenating the funct
 & = 8^2 = 64\nonumber
 \end{align}
 
-So far everything appears as a little more cryptic way of defining functions and computing the result of applying a function to its argument. The real power of lambda calculus becomes visible when you apply functions to other functions, in exactly the same way you apply them to non-function arguments. We will illustrate this over function composition. Things will git a little complicated at this point; either go very slowly, or have a first pass, read on and come back. In either case you need to use pencil and paper to understand the transitions between forms.  Now let us have the following higher order function that composes two functions -- the lambda calculus way of having $f_1\circ f_2$:
+So far everything appears as a little more cryptic way of defining functions and computing the result of applying a function to its argument. The real power of lambda calculus becomes visible when you apply functions to other functions, in exactly the same way you apply them to non-function arguments. We will illustrate this over function composition. Things will get a little complicated at this point; either go very slowly, or have a first pass, read on and come back. In either case you need to use pencil and paper to understand the transitions between forms.  Now let us have the following higher order function that composes two functions -- the lambda calculus way of having $f_1\circ f_2$:
 
 \begin{align}
 (\lambda f_1.(\lambda f_2.(\lambda z.(f_1(f_2z))))
@@ -103,20 +102,19 @@ We now turn to a detailed and formal characterization of the concepts we encount
 From here on, we take a rather abstract stance towards lambda calculus.  The discussion will apply to any domain of use, not just arithmetic. Try to perceive the lambda calculus as a system of manipulating expressions constructed from a set of names, the lambda, the dot, and left and right parentheses, which we call \uterm{lambda terms}. Also refrain from assuming that $x, y, z$ stand for variables, $f, g, h$ for functions, $a, b, c$  for constants, etc. Names are just names; although our use may be suggestive at times, there is no necessary association between a name and the type of object it stands for.
 
 \begin{udefinition}[Lambda terms]\label{dfexp}
-Let $A=\{ a,b,\ldots,z\}$ be the set of \uterm{names}, we extend the set by subscripts as we need so that we have an infinite set of names.
+Let $A=\{ a,b,\ldots,z\}$ be the set of \uterm{names}, we extend the set by subscripting like $x_1,x_2\ldots$ as we need, so that we have an infinite set of names.
 
 \begin{itemize}
 \item[i.] all names are lambda terms; 
 \item[ii.] if $\omega_1$ and $\omega_2$ are lambda terms, so is $(\omega_1\omega_2)$; \hfill (concatenation/application)
 \item[iii.] if $\omega$ is a lambda term and $\alpha$ is a name, then
-$(\lambda\alpha.\omega)$ is an expression; \hfill (abstraction) 
-\item[iv.] nothing else is an expression.
+$(\lambda\alpha.\omega)$ is a lambda term; \hfill (abstraction) 
+\item[iv.] nothing else is a lambda term.
 \end{itemize}
 \qed
 \end{udefinition} 
 
 We usually shorten ``lambda term'' to ``term''. Given a name $\alpha$, we call the expression $\lambda\alpha$ a ``lambda binder''.
-
 
 \begin{uexample}\label{fullex}
 Some example terms:
@@ -154,7 +152,7 @@ f(xyz) & \equiv   (f((xy)z))\\
 f(xy)z & \equiv   ((f(xy))z) 
 \end{align*}
 
-\item[C.] The scope of dot extends to right until the first right parenthesis whose matching pair falls to the right of the dot:
+\item[C.] The scope of dot extends to right until the first right parenthesis whose matching pair falls to the left of the dot:
 
 \begin{align*}
 (\lambda x.xx)y & \equiv ((\lambda x.xx)y) \not\equiv \lambda x.xxy\\
@@ -615,7 +613,12 @@ that they do what they are meant to do.
 
 }
 
-\cite{selinger13}
+\section{Lambda Calculus in LISP}
+
+We will adopt \href{https://slideplayer.com/slide/11363727/}{the implementation} provided by \href{https://es-static.fbk.eu/people/cimatti/}{Alessandro Cimatti}, with some minor modifications.
+
+
+
 \bibliographystyle{plain}
 \bibliography{ozge}
 \end{document}
