@@ -26,21 +26,20 @@ Office hours: by appointment (B208).
 13  | Dec 28 | Midterm |
 14  | Jan 4  | Distributional semantics|
 
-### Material
+### Resources 
 
 * Lecture notes (posted as we go along).
-* Weekly readings
+* Weekly readings.
 * Textbook:  
 	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press.
 * Lisp companion:  
 	Graham, P. (1996). ANSI Common Lisp. Prentice Hall Inc., NJ.  
 
-
 ### Communication
 
 * Regularly check this page for assignments, readings, notes, etc.
 * Primary forum of discussion is the class.
-	* use the [newsgroup](https://groups.google.com/forum/#!forum/metu-cogs-543-computational-semantics) for follow-up comments, questions etc.
+* Use and regurlarly check the [newsgroup](https://groups.google.com/forum/#!forum/metu-cogs-543-computational-semantics) for follow-up comments, questions, announcements etc.
 
 ### Requirements
 
@@ -50,18 +49,18 @@ Office hours: by appointment (B208).
 	* no credit for late submissions.
 * Mid-term exam 1 (Nov 16, 20%)
 * Mid-term exam 2 (Dec 28, 20%)
-* Term project: formalization and computational implementation of a natural language fragment (30%):
+* Term project: implementation of a natural language fragment (30%):
 	* Agree with the instructor on the scope of the fragment (Nov 30, 5%, not graded)
 	* Interim report (Jan 4, 10%, not graded)
 	* Poster presentation (Jan 18, 15%)
 	* **All deadlines are strict.**
 
-### Attendance
+### Attendance and participation
 
-* When you are unable to attend, write a brief email before the class -- no reason required.
-* **Missing two classes without prior notice gets NA.**
-* Unless you are a regular attender (=not more than 3 misses), don't expect any help from me outside the class hours.
-* I expect you to come to classes on time, having read the week's reading, and to contribute to discussion (oral and/or written).
+* When you are unable to attend, write a brief email before the class -- no reason required, just notify.
+* **Missing two classes without giving prior notice gets NA.**
+* Unless you are a regular attender (< 4 misses), don't expect any course related help from me outside the class hours.
+* When you come, please be on time, having read the week's reading, and contribute to discussion (oral and/or written).
 
 ### Special assistance
 
