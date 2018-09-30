@@ -55,7 +55,8 @@ Office hours: by appointment (B208).
 
 ### Attendance
 
-* When you are unable to attend, write a short notice email before the class. **Missing two classes without prior notice gets NA.**
+* When you are unable to attend, write a brief email before the class -- no reason required.
+* **Missing two classes without prior notice gets NA.**
 * Unless you are a regular attender (=not more than 3 misses), don't expect any help from me outside the class hours.
 * I expect you to come to classes on time, having read the week's reading, and to contribute to discussion (oral and/or written).
 
