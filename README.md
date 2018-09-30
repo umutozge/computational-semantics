@@ -32,6 +32,9 @@ Office hours: by appointment (B208).
 * Weekly readings
 * Textbook:  
 	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press.
+* Lisp companion:  
+	Graham, P. (1996). ANSI Common Lisp. Prentice Hall Inc., NJ.  
+
 
 ### Communication
 
