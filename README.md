@@ -1,4 +1,6 @@
-# COGS 543 - Computational Semantics @ Informatics Institute, METU
+# COGS 543 - Computational Semantics - Fall 2018
+
+Informatics Institute, METU
 
 An introductory course on formal and computational approaches to natural language meaning.
 
@@ -11,20 +13,20 @@ Office hours: by appointment (B208).
 
 |Week| Date   | Topic | Notes |  Assignment | Reading |
 :---|:---|:---|:---|:---|:---
-1   | Oct 5  | Intro & mathematical preliminaries |
-2   | Oct 12 | Basics of model-theoretic semantics |
-3   | Oct 19 | Representing meanings in LISP |
-4   | Oct 26 | Lambda Calculus |
-5   | Nov 2  | Lambda Calculus in LISP |
-6   | Nov 9  | A categorial syntax |
-7   | Nov 16 | Midterm 
-8   | Nov 23 | Composing meaning |
-9   | Nov 30 | Quantification I | 
-10  | Dec 7  | Quantification II |
-11  | Dec 14 | Intensionality I  | 
-12  | Dec 21 | Intensionality II | 
-13  | Dec 28 | Midterm |
-14  | Jan 4  | Distributional semantics|
+1   | Oct 5  | Intro & mathematical preliminaries |  
+2   | Oct 12 | Basics of model-theoretic semantics | |<!---[A01](assignments/cogs543-assignment-01.pdf)-->
+3   | Oct 19 | Representing meanings in LISP |       |<!---[A02](assignments/cogs543-assignment-02.pdf)-->
+4   | Oct 26 | Lambda Calculus |                     |<!---[A03](assignments/cogs543-assignment-03.pdf)-->
+5   | Nov 2  | Lambda Calculus in LISP |             |<!---[A04](assignments/cogs543-assignment-04.pdf)-->
+6   | Nov 9  | A categorial syntax |                 |<!---[A05](assignments/cogs543-assignment-05.pdf)-->
+7   | Nov 16 | Midterm                               |<!---[A06](assignments/cogs543-assignment-06.pdf)-->
+8   | Nov 23 | Composing meaning |                   |<!---[A07](assignments/cogs543-assignment-07.pdf)-->
+9   | Nov 30 | Quantification I |                    |<!---[A08](assignments/cogs543-assignment-08.pdf)-->
+10  | Dec 7  | Quantification II |                   |<!---[A09](assignments/cogs543-assignment-09.pdf)-->
+11  | Dec 14 | Intensionality I  |                   |<!---[A10](assignments/cogs543-assignment-10.pdf)-->
+12  | Dec 21 | Intensionality II |                   |<!---[A11](assignments/cogs543-assignment-11.pdf)-->
+13  | Dec 28 | Midterm |                             |<!---[A12](assignments/cogs543-assignment-12.pdf)-->
+14  | Jan 4  | Distributional semantics|             |<!---[A13](assignments/cogs543-assignment-13.pdf)-->
 
 ### Resources 
 
@@ -53,7 +55,6 @@ Office hours: by appointment (B208).
 	* Agree with the instructor on the scope of the fragment (Nov 30, 5%, not graded)
 	* Interim report (Jan 4, 10%, not graded)
 	* Poster presentation (Jan 18, 15%)
-	* **All deadlines are strict.**
 
 ### Attendance and participation
 
