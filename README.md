@@ -13,12 +13,13 @@ Office hours: by appointment (B208).
 
 |Week| Date   | Topic | Notes |  Assignment | Reading |
 :---|:---|:---|:---|:---|:---
-1   | Oct 5  | Intro & mathematical preliminaries |  
-2   | Oct 12 | Basics of model-theoretic semantics | |<!---[A01](assignments/cogs543-assignment-01.pdf)-->
+
+1   | Oct 5  | Intro & mathematical preliminaries | \
+2   | Oct 12 | Basics of model-theoretic semantics | [Math. prel.](notes/00_math-preliminaries.pdf), if needed|[A01](assignments/cogs543-assignment-01.pdf) | Winter (2016), pp. 12-27|
 3   | Oct 19 | Representing meanings in LISP |       |<!---[A02](assignments/cogs543-assignment-02.pdf)-->
 4   | Oct 26 | Lambda Calculus |                     |<!---[A03](assignments/cogs543-assignment-03.pdf)-->
 5   | Nov 2  | Lambda Calculus in LISP |             |<!---[A04](assignments/cogs543-assignment-04.pdf)-->
-6   | Nov 9  | A categorial syntax |                 |<!---[A05](assignments/cogs543-assignment-05.pdf)-->
+6   | Nov 9  | Type-theoretic syntax/semantics |     |<!---[A05](assignments/cogs543-assignment-05.pdf)-->
 7   | Nov 16 | Midterm                               |<!---[A06](assignments/cogs543-assignment-06.pdf)-->
 8   | Nov 23 | Composing meaning |                   |<!---[A07](assignments/cogs543-assignment-07.pdf)-->
 9   | Nov 30 | Quantification I |                    |<!---[A08](assignments/cogs543-assignment-08.pdf)-->
