@@ -14,7 +14,7 @@ Office hours: by appointment (B208).
 |Week| Date   | Topic | Notes |  Assignment | Reading |
 :---|:---|:---|:---|:---|:---
 
-1   | Oct 5  | Intro & mathematical preliminaries | \
+1   | Oct 5  | Intro & mathematical preliminaries | 
 2   | Oct 12 | Basics of model-theoretic semantics | [Math. prel.](notes/00_math-preliminaries.pdf), if needed|[A01](assignments/cogs543-assignment-01.pdf) | Winter (2016), pp. 12-27|
 3   | Oct 19 | Representing meanings in LISP |       |<!---[A02](assignments/cogs543-assignment-02.pdf)-->
 4   | Oct 26 | Lambda Calculus |                     |<!---[A03](assignments/cogs543-assignment-03.pdf)-->
