@@ -15,7 +15,7 @@ Office hours: by appointment (B208).
 :---|:---|:---|:---|:---|:---
 1   | Oct 5  | Intro & mathematical preliminaries | 
 2   | Oct 12 | Basics of model-theoretic semantics | [Math. prel.](notes/00_math-preliminaries.pdf), if needed|[A01](assignments/cogs543-assignment-01.pdf) | Winter (2016), pp. 12-27|
-3   | Oct 19 | Representing meanings in LISP |       |<!---[A02](assignments/cogs543-assignment-02.pdf)-->
+3   | Oct 19 | Types; representing meanings in LISP |       |[A02](assignments/cogs543-assignment-02.pdf) | Winter (2016), pp. 27-52|
 4   | Oct 26 | Lambda Calculus |                     |<!---[A03](assignments/cogs543-assignment-03.pdf)-->
 5   | Nov 2  | Lambda Calculus in LISP |             |<!---[A04](assignments/cogs543-assignment-04.pdf)-->
 6   | Nov 9  | Type-theoretic syntax/semantics |     |<!---[A05](assignments/cogs543-assignment-05.pdf)-->
@@ -33,9 +33,9 @@ Office hours: by appointment (B208).
 * Lecture notes (posted as we go along).
 * Weekly readings.
 * Textbook:  
-	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press.
+	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press, UK.
 * Lisp companion:  
-	Graham, P. (1996). ANSI Common Lisp. Prentice Hall Inc., NJ.  
+	Graham, P. (1996). ANSI Common Lisp. Prentice Hall Inc., NJ.
 
 ### Communication
 
