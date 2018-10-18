@@ -12,7 +12,7 @@
 ; 
 ; (in-package setutils)
 
-(defconstant test '(1 2 3 4 5 6 7 8 9 10))
+(defparameter *test* '(1 2 3 4 5 6 7 8 9 10))
 
 (defun setp (lst)
   "test for sethood"
