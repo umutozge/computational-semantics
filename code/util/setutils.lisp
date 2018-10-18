@@ -14,12 +14,11 @@
 
 (defconstant test '(1 2 3 4 5 6 7 8 9 10))
 
-(defun setp (seq)
+(defun setp (lst)
   "test for sethood"
-  (and
-    (listp seq)
-    (let ((testpair (remove-duplicates seq)))
-      (eql (length seq) (length testpair)))))
+  (or (null lst) 
+      (and (not (member (car lst) (cdr lst))) 
+           (setp (cdr lst)))))
 
 (defun random-pick (set)
   "randomly pick an element from a set"
@@ -42,6 +41,7 @@
   "a funny function that randomly decides to use an iterative or a recursive function to pick a subset from a given set -- if size is missing, picks a random subset"
   (funcall (intern (concatenate 'string "PICK-A-SUBSET-" (random-pick '("I" "R")))) set size))
 
+
 (defun cartesian-product (set-of-sets &optional (accu '(nil)))
   "computes the cartesian product of the sets in set-of-sets"
   (if (endp set-of-sets)
@@ -63,4 +63,3 @@
           (pick-a-subset
             (cartesian-product
               (make-list n :initial-element baseset))))))
-
