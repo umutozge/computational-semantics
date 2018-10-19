@@ -26,4 +26,4 @@ Because the man that the police interrogated didn't call his lawyer was concerne
 
 It's safe to believe the people the people you believe are smart believe are smart are smart, but not safe to trust the people the people you trust trust.
 
-It's safe to (believe ((the people the people you believe are smart believe are smart) are smart)), but not safe to (trust (the people (the people you trust trust))).
+It's safe to (believe ((the people (the people you believe are smart) believe are smart) are smart)), but not safe to (trust (the people (the people you trust trust))).
