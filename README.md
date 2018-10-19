@@ -16,7 +16,7 @@ Office hours: by appointment (B208).
 1   | Oct 5  | Intro & mathematical preliminaries | 
 2   | Oct 12 | Basics of model-theoretic semantics | [Math. prel.](notes/00_math-preliminaries.pdf), if needed|[A01](assignments/cogs543-assignment-01.pdf) | Winter (2016), pp. 12-27|
 3   | Oct 19 | Types; representing meanings in LISP |       |[A02](assignments/cogs543-assignment-02.pdf) | Winter (2016), pp. 27-52|
-4   | Oct 26 | Lambda Calculus |                     |<!---[A03](assignments/cogs543-assignment-03.pdf)-->
+4   | Oct 26 | Lambda Calculus |                     |[A03](assignments/cogs543-assignment-03.pdf)| Winter (2016), pp. 44-64|
 5   | Nov 2  | Lambda Calculus in LISP |             |<!---[A04](assignments/cogs543-assignment-04.pdf)-->
 6   | Nov 9  | Type-theoretic syntax/semantics |     |<!---[A05](assignments/cogs543-assignment-05.pdf)-->
 7   | Nov 16 | Midterm                               |<!---[A06](assignments/cogs543-assignment-06.pdf)-->
@@ -47,7 +47,7 @@ Office hours: by appointment (B208).
 
 * Assignments (30%):
 	* not graded;
-	* attempt all questions and submit by Wed to get full credit;
+	* attempt all questions and submit by the deadline to get full credit;
 	* no credit for late submissions.
 * Mid-term exam 1 (Nov 16, 20%)
 * Mid-term exam 2 (Dec 28, 20%)
