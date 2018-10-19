@@ -79,11 +79,11 @@
 (defun  cartesian-product-binary (set1 set2)
   "compute the cartesian product of the given sets -- the first set may be a set of tuples rather than atoms"
   (let ((accu nil))
-	(dolist (x set1 accu)
-	  (dolist (y set2)
-		(setf accu (cons
-					 (append (if (listp x) x (list x)) (list y))
-					 accu))))))
+    (dolist (x set1 accu)
+      (dolist (y set2)
+        (setf accu (cons
+                     (append (if (listp x) x (list x)) (list y))
+                     accu))))))
 
 (defun cartesian-product-v2 (set-of-sets)
   (reduce #'cartesian-product-binary set-of-sets))
