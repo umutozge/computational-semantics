@@ -58,19 +58,19 @@
 (defun cartesian-product (set-of-sets &optional accu)
   "computes the cartesian product of the sets in set-of-sets"
   (cond ((endp set-of-sets) accu)
-		((null accu) (cartesian-product
-					   (cdr set-of-sets)
-					   (mapcar 
-						 #'(lambda (x) (list x))
-						 (car set-of-sets))))
-		(t (cartesian-product
-			 (cdr set-of-sets)
-			 (reduce 'union (mapcar
-							  #'(lambda (x)
-								  (mapcar
-									#'(lambda (y) (append x (list y)))
-									(car set-of-sets)))
-							  accu))))))
+        ((null accu) (cartesian-product
+                       (cdr set-of-sets)
+                       (mapcar 
+                         #'(lambda (x) (list x))
+                         (car set-of-sets))))
+        (t (cartesian-product
+             (cdr set-of-sets)
+             (reduce 'union (mapcar
+                              #'(lambda (x)
+                                  (mapcar
+                                    #'(lambda (y) (append x (list y)))
+                                    (car set-of-sets)))
+                              accu))))))
 ;;
 ;; Cartesian product of a collection of sets
 ;; Version 2
@@ -110,7 +110,7 @@
 (defun binary-relationp (relation)
   "superficially (only first tuple) checks if relation is a binary relation -- a set of ordered pairs"
   (let ((first-tuple (car relation)))
-	(and first-tuple (singletonp (cdr first-tuple)))))
+    (and first-tuple (singletonp (cdr first-tuple)))))
   
 
 (defun collect-image (item relation &optional accu)
@@ -120,16 +120,16 @@
   Note that ASSOC is not helpful, as it gets only the first match.
   "
   (if (null relation)
-	accu
-	(let ((pick-item (if (binary-relationp relation) ; if you have a bin rel. make sure that what you 
-					   #'cadar			             ; collect is a proper set rather than a set of singletons
-					   #'cdar)))
-	  (collect-image
-		item 
-		(cdr relation)
-		(if (equal (caar relation) item)
-		  (cons (funcall pick-item relation) accu)
-		  accu)))))
+    accu
+    (let ((pick-item (if (binary-relationp relation) ; if you have a bin rel. make sure that what you 
+                       #'cadar                         ; collect is a proper set rather than a set of singletons
+                       #'cdar)))
+      (collect-image
+        item 
+        (cdr relation)
+        (if (equal (caar relation) item)
+          (cons (funcall pick-item relation) accu)
+          accu)))))
 
 ;; A base case for turning sets to functions is that of a set, namely 
 ;; the characteristic function of a set
@@ -144,7 +144,7 @@
 
 (defun set-to-function (set-of-tuples)
   "constructs a curried function from the set representation of a first-order relation"
-	(if (consp (car set-of-tuples))
-	   #'(lambda (x)
-		   (set-to-function (collect-image x set-of-tuples)))
-	   (get-char-function set-of-tuples)))
+    (if (consp (car set-of-tuples))
+       #'(lambda (x)
+           (set-to-function (collect-image x set-of-tuples)))
+       (get-char-function set-of-tuples)))
