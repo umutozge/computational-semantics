@@ -1,0 +1,23 @@
+john talks 
+(talks john)
+
+john is happy 
+((is happy) john)
+
+john is a happy spy 
+((is (a ((mod happy) spy))) john)
+
+john is a happy martian spy 
+((is (a ((mod happy) ((mod martian) spy)))) john)
+
+every spy is happy 
+((every spy) (is happy))
+
+some spy is happy 
+((some spy) (is happy))
+
+no spy is a happy spy 
+((no spy) (is (a ((mod happy) spy))))
+
+some happy martian spy sleeps 
+((some ((mod happy) ((mod martian) spy))) sleeps)
