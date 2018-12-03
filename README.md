@@ -22,7 +22,7 @@ Office hours: by appointment (B208).
 7   | Nov 16 | Midterm                             |
 8   | Nov 23 | Composing meaning |                 | <!---[A06](assignments/cogs543-assignment-06.pdf)-->
 9   | Nov 30 | Quantification I |                  | <!---[A07](assignments/cogs543-assignment-07.pdf)-->
-10  | Dec 7  | Quantification II |                 | <!---[A08](assignments/cogs543-assignment-08.pdf)-->
+10  | Dec 7  | Quantification II |                 | [A06](assignments/cogs543-assignment-06.pdf)
 11  | Dec 14 | Intensionality I  |                 | <!---[A09](assignments/cogs543-assignment-09.pdf)-->
 12  | Dec 21 | Intensionality II |                 | <!---[A10](assignments/cogs543-assignment-10.pdf)-->
 13  | Dec 28 | Midterm |                           | <!---[A11](assignments/cogs543-assignment-11.pdf)-->
