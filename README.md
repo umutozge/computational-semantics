@@ -53,8 +53,8 @@ Office hours: by appointment (B208).
 * Mid-term exam 2 (Dec 28, 20%)
 * Term project: implementation of a natural language fragment (30%):
 	* Agree with the instructor on the scope of the fragment (Nov 30, 5%, not graded)
-	* Interim report (Jan 4, 10%, not graded)
-	* Poster presentation (Jan 18, 15%)
+	* Interim report (Jan 10, 10%, not graded)
+	* Poster submission (Jan 20, 15%)
 
 ### Attendance and participation
 
