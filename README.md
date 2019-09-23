@@ -64,7 +64,6 @@ Office hours: by appointment.
 
 * When you are unable to attend, write a brief email before the class -- no reason required, just notify.
 * **Missing two classes without giving prior notice gets NA.**
-* Unless you are a regular attender (< 4 misses), don't expect any course related help from me outside the class hours.
 * When you come, please be on time.
 
 ### Special assistance
