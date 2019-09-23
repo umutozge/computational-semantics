@@ -1,13 +1,17 @@
-# COGS 543 - Computational Semantics - Fall 2018
+# COGS 543 - Computational Semantics - Fall 2019
 
 Informatics Institute, METU
 
 An introductory course on formal and computational approaches to natural language meaning.
 
-Friday, 9:40-12:30, II-05, Informatics Institute
+Monday, 11:40-14:30, II-01, Informatics Institute
 
 [Umut Özge](https://umutozge.github.io)  
 Office hours: by appointment (B208).
+
+[Erolcan Er]()  
+Teaching Assistant
+Office hours: by appointment.
 
 ### Weekly Schedule
 
@@ -49,19 +53,19 @@ Office hours: by appointment (B208).
 	* not graded;
 	* attempt all questions and submit by the deadline to get full credit;
 	* no credit for late submissions.
-* Mid-term exam 1 (Nov 16, 20%)
-* Mid-term exam 2 (Dec 28, 20%)
+* Mid-term exam 1 (date TBA 20%)
+* Mid-term exam 2 (date TBA, 20%)
 * Term project: implementation of a natural language fragment (30%):
-	* Agree with the instructor on the scope of the fragment (Nov 30, 5%, not graded)
-	* Interim report (Jan 10, 10%, not graded)
-	* Poster submission (Jan 20, 15%)
+	* Agree with the instructor on the scope of the fragment (date TBA, 5%, not graded)
+	* Interim report (date TBA, 10%, not graded)
+	* Poster submission (date TBA, 15%)
 
 ### Attendance and participation
 
 * When you are unable to attend, write a brief email before the class -- no reason required, just notify.
 * **Missing two classes without giving prior notice gets NA.**
 * Unless you are a regular attender (< 4 misses), don't expect any course related help from me outside the class hours.
-* When you come, please be on time, having read the week's reading, and contribute to discussion (oral and/or written).
+* When you come, please be on time.
 
 ### Special assistance
 
