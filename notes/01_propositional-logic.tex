@@ -1,15 +1,19 @@
 \documentclass[11pt]{article}
 
+\usepackage{usynsem}
+\usepackage{uling}
 \usepackage{natbib,unatbib}
 \usepackage[nohide,twocolumn]{ulecnot}
 %\usepackage{xyling}
 \usepackage{tikz-qtree}
 \usepackage{cancel}
 
+
+
 \usepackage{ulogicproof}
 
 \pagestyle{fancy}
-\lhead{COGS 502 -- Programming and Logic}
+\lhead{COGS 543 -- Computational Semantics}
 \chead{Propositional Logic}
 \rhead{Updated \it \today}
 \lfoot{Umut \"Ozge}
@@ -30,7 +34,7 @@ related fields.
 
 \item Laws of reasoning in logic, with some provisos, may be argued to apply to the end-products of thought,
 idealized as propositions, predicates, quantification, and so on, which are
-expressed in a formal (for now read as ``human-made'' or ``artificial'') language.
+expressed in a formal language.
 Logical laws can at best be utilized in justifying these end-products, rather
 than characterizing how they are discovered or arise in the mind/brain of the
 thinker.\footnote{See the introduction to \cite{reichenbach47} for some relevant
@@ -510,7 +514,7 @@ $\mathcal{I}(q,\crbr{(p,1),(q,0)}) = 0$.
 $\mathcal{I}$ we are using capital symbols like $P$ instead of $p$. There is a
 reason for this. The lower-case symbols like $p$, $q$ and so on are part of our
 alphabet and are used to refer to atomic propositions. On the other hand the
-upper-case sypmbols like $P$ are used and will be used to refer to arbitrary
+upper-case symbols like $P$ are used and will be used to refer to arbitrary
 formulas. An arbitrary formula can be of any complexity as well as being atomic.
 If you go back to \xref{isimple} you will see that we started with $P$ but then
 further restricted what $P$ can stand for by the expression `If $P$ is atomic'.
@@ -770,14 +774,9 @@ formula with respect to a given valuation.
 `$V$ \uterm{satisfies} $F$'
 iff $\mathcal{I}(F,V)= 1$. 
 
-\item Sometimes one is interested in computing the \emph{set} of valuations that
-satisfy a formula. From this perspective, every formula imposes a filter on valuations; it
-picks a subset of the set of all possible valuations. This subset is the set of
-valuations that satisfy the formula in question.
+\item Sometimes one is interested in computing the \emph{set} of valuations that satisfy a formula. From this perspective, every formula imposes a filter on valuations; it picks a subset of the set of all possible valuations. This subset is the set of valuations that satisfy the formula in question.
 
-\item One straightforward method to compute the valuations that satisfy a formula
-true is to construct a truth-table for the entire formula, as we have been doing
-for connectives. 
+\item One straightforward method to compute the valuations that satisfy a formula is to construct a truth-table for the entire formula, as we have been doing for connectives. 
 
 \hrulefill
 \begin{uexample}
@@ -994,8 +993,7 @@ Therefore decomposition proceeds as follows:
 \end{uexample}
 
 
-\item Now it is time to list decomposition rules for each connective and
-and their negation:
+\item Now it is time to list decomposition rules for each connective and their negation:
 \newpage
 \item[]{\bf Truth-tree construction rules:}
 
@@ -1189,7 +1187,7 @@ after the construction of the tree. For instance, construct the truth-tree for
 (p\imp(q\imp r)) \imp ((p\imp q)\imp(p\imp r))
 \end{align}
 
-how easy it is to see whether it is valid or not?
+How easy is it to see whether it is valid or not?
 
 \item At this point we make use of a relation between validity and
 inconsistency. Given that a valid formula is true in every valuation, its denial
