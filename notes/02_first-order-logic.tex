@@ -3,7 +3,9 @@
 \usepackage[nohide,twocolumn]{ulecnot}
 
 \usepackage{bussproofs}
-
+%\usepackage{umut}
+\usepackage{usynsem}
+\usepackage{uling}
 
 \pagestyle{fancy}
 \lhead{COGS 543 -- Computational Semantics}
@@ -22,50 +24,43 @@
 \ezimeti{
 \item We pick our vocabulary from:
 \ezimeti{
-\item[i.] A set of \uterm{predicate symbols}, possibly with subscripts in order
-to not run out of symbols no matter how complicated our formulas can get. We use
-upper case Latin letters to designate predicate symbols.
+\item[i.] Sets of \uterm{constants}, each set specified for an \uterm{arity}. E.g.\ $C_0 = \crbr{a,b,c\ldots}$, $C_1 = \crbr{W,S,G\ldots}$, and so on. Again assume a subscripting scheme for constants in order not to run out of symbols no matter how complicated our formulas get.
 
-\item[ii.] A set of \uterm{variables}, again possibly with subscripts. We use lower
-case Latin letters to designate variables.
+\item[ii.] A set of \uterm{variables}, $V = \crbr{x,y,z,\ldots}$, again possibly with subscripts.
 
-\item[iii.] A set of \uterm{quantifier symbols}, namely $\{\forall,\exists\}$.
+\item[iii.] A set of \uterm{quantifier} symbols $Q = \{\forall,\exists\}$.
+\item[iv.] Two sets of \uterm{connective symbols} $K_1 = \crbr{\neg}$ and $K_2 = \crbr{\land,\lor,\cond}$.
+\item[v.] We define a set of \uterm{terms} $T= C_0 \cup V$.
 }
 
 \item We will use upper and lower case Greek letters for variables over
 predicate symbols and variables, respectively.
 
-\item Now we can define the well-formed formulas of our language:
+\item Now we can define the well-formed formulas (wff for short) first-order logic (FOL for short):
 
-\begin{udefinition}[Well-formed formulas of predicate logic]
+\begin{udefinition}[Well-formed formulas of FOL]
 \ezimeti{
 \item[]
-\item[i.] $\Pi\alpha_1,\ldots,\alpha_n$ is a wff iff $\Pi$ is a predicate symbol
-and $\alpha_1,\ldots,\alpha_n$ is a
-sequence of variables.
+\item[i.] $\Pi\alpha_1,\ldots,\alpha_n$ for $n \geq 1$ is a wff iff $\Pi \in C_n$ and $\alpha_1,\ldots,\alpha_n\in T$ .
 
-\item[ii.] ($\phi \land \psi$) is a wff iff $\phi$ and $\psi$ are wff's;\\ likewise
-for, $(\phi \lor \psi)$, $(\phi \imp \psi)$, and $(-\phi)$.
+\item[ii.] ($\phi \land \psi$) is a wff iff $\phi$ and $\psi$ are wff's;\\ likewise for, $(\phi \lor \psi)$, $(\phi \imp \psi)$, and $(-\phi)$.
 
-\item[iii.] $\forall\alpha\phi$ and $\exists\alpha\phi$ are wff's iff $\phi$
-is a wff and $\alpha$ is a variable.
+\item[iii.] $\forall\alpha\phi$ and $\exists\alpha\phi$ are wff's iff $\phi$ is a wff and $\alpha \in V$.
+
+\item[iv.] Nothing else is a wff.
 }
 \label{consdef}
 \end{udefinition}
 
 \begin{uexample} 
-Observe how the formula in \xref{constree} is constructed on the
-basis of definition \ref{consdef}.
+Observe how the formula in \xref{constree} is constructed on the basis of definition \ref{consdef}.
 
 \begin{align}
 \label{constree}
 \forall x((Sx\lor Wx)\imp \exists y(Ky\land Txy))
 \end{align}
 
-the tree on the right hand side is simplified by retaining only the
-structure forming operations as node labels, namely connectives and `.' sign
-for concatenation. Let us call it the \uterm{construction tree} of the formula
-in \xref{constree}.
+the tree on the right hand side is simplified by retaining only the structure forming operations as node labels, namely connectives and `.' sign for concatenation. Let us call it the \uterm{construction tree} of the formula in \xref{constree}.
 
 
 \begin{center}
@@ -86,8 +81,8 @@ in \xref{constree}.
 
 
 
-\item To keep the number of parentheses manageable, we follow the following
-convention:
+\item To keep the number of parentheses manageable, we follow the following convention:
+
 \ezimeti{
 \item[] negation ($-$) and quantifiers ($\forall x$,$\exists v$, etc.) bind most tightly;
 \item[] then comes conjunction ($\land$) and alternation ($\lor$)
@@ -97,35 +92,27 @@ convention:
 
 \section{Occurrence, bondage, freedom, and substitution}
 \ezimeti{
-\item We call a \uterm{quantifier}, the expression formed by concatenating a
-quantifier symbol and a variable. E.g.\ $\forall x$, $\exists z$.
+
+\item We call a \uterm{quantifier}, the expression formed by concatenating a quantifier symbol and a variable. E.g.\ $\forall x$, $\exists z$.
 
 \item[] {\bf Occurrence:}
 
-\item An \uterm{occurrence of a variable} in a formula is a leaf (terminal) node
-in the construction tree of that formula occupied by the variable. Question: how
-many occurrences does the variable $x$ have in formula \xref{constree}?
+\item An \uterm{occurrence of a variable} in a formula is a leaf (terminal) node in the construction tree of that formula occupied by the variable. Question: how many occurrences does the variable $x$ have in formula \xref{constree}?
 
-\item Similarly an \uterm{occurrence of a quantifier} in a formula is a node in the
-construction tree occupied by the quantifier.
+\item Similarly an \uterm{occurrence of a quantifier} in a formula is a node in the construction tree occupied by the quantifier.
 
 \item[] {\bf Bondage versus freedom:}
 
-\item An occurrence of a variable $\alpha$ is \uterm{bound} in a formula $\phi$ by an
-occurrence of a quantifier $\forall\alpha$ (or $\exists\alpha$) if there exists a path from
-$\alpha$ going up to $\forall\alpha$ (or $\exists\alpha$), and there exists no
-other occurrence of $\forall\alpha$ (or $\exists\alpha$) along the path.
+\item An occurrence of a variable $\alpha$ is \uterm{bound} in a formula $\phi$ by an occurrence of a quantifier $\forall\alpha$ (or $\exists\alpha$) if there exists a path from $\alpha$ going up to $\forall\alpha$ (or $\exists\alpha$), and there exists no other occurrence of $\forall\alpha$ (or $\exists\alpha$) along the path.
 
 % \begin{uexercise}
 % Mark the scopes of the quantifiers below:
 % \end{uexercise}
 
-\item An occurrence of a variable $\alpha$ is \uterm{free} in a formula $\phi$
-iff $\alpha$ is not bound (by any quantifier) in $\phi$.
+\item An occurrence of a variable $\alpha$ is \uterm{free} in a formula $\phi$ iff $\alpha$ is not bound (by any quantifier) in $\phi$.
 
 \begin{uexercise}
-State which occurrences of variables are free and bound in the following
-formula:
+State which occurrences of variables are free and bound in the following formula:
 
 $$
 ((\exists x\, Fx \lor\forall x\, ((Gz \land Hx) \imp (\exists z\, Fz\lor Hz)))
@@ -140,34 +127,23 @@ $$
 \item[] {\bf Substitution:}
 
 \item Given a formula $\phi$, 
-$$\subs{\phi}{\beta}{\alpha}$$ 
-is the formula obtained by substituting the variable $\beta$ to each and every
-\emph{free} occurrence of variable $\alpha$ in $\phi$.
+$$\subs{\phi}{\beta}{\alpha}$$ is the formula obtained by substituting the variable $\beta$ to each and every \emph{free} occurrence of variable $\alpha$ in $\phi$.
 
 
 \item[] {\bf Accidental bondage:}
 
-\item When substituting a variable for another one in a formula, care should be
-taken NOT to introduce bondages that wouldn't be there if the substitution had
-not taken place.  
+\item When substituting a variable for another one in a formula, care should be taken NOT to introduce bondages that wouldn't be there if the substitution had not taken place.  
 \item[] Take for instance the formula
 
 $$\exists y\, Lxy$$
 
-with $L$ designating the binary predicate \emph{loves}, which says there is some
-entity that $x$ -- whatever that is -- loves. Substituting $y$ for $x$ in this
-formula, namely $\subs{(\exists y\, Lxy)}{y}{x}$, gives $\exists y\, Lyy$. This
-says that there exists a self-loving entity. Something different and more
-specific than our original formula. To avoid such situations we introduce the
-following definition.
+with $L$ designating the binary predicate \emph{loves}, which says there is some entity that $x$ -- whatever that is -- loves. Substituting $y$ for $x$ in this formula, namely $\subs{(\exists y\, Lxy)}{y}{x}$, gives $\exists y\, Lyy$. This says that there exists a self-loving entity. Something different and more specific than our original formula. To avoid such situations we introduce the following definition.
 
-\item Variable $\beta$ is \uterm{free for} $\alpha$ in formula $\phi$ if no free
-occurrence of $\alpha$ in $\phi$ stands along a path descending from a
+\item Variable $\beta$ is \uterm{free for} $\alpha$ in formula $\phi$ if no free occurrence of $\alpha$ in $\phi$ stands along a path descending from a
 quantifier $\forall \beta$  or $\exists \beta$.
 
 \begin{uexercise}
-Give $\subs{\phi}{y}{x}$ for the following $\phi$ and state whether $y$ is free
-for $x$ in $\phi$:
+Give $\subs{\phi}{y}{x}$ for the following $\phi$ and state whether $y$ is free for $x$ in $\phi$:
 
 \begin{enumerate}
 \item $\forall z\,(Px\imp Qz)$
@@ -176,6 +152,45 @@ for $x$ in $\phi$:
 \item $\forall y\,Fzy\imp \exists y\, Gxyz$
 \end{enumerate}
 \end{uexercise}
+
+\section{Semantics}
+
+\begin{udefinition}[Model]
+A model $\mathcal{M}$ is a structure $\langle D,I,g,\crbr{0,1} \rangle$  where,
+\begin{itemize}
+\item $D$ is a set of individuals (or entities);
+\item $I$ is some functional mapping $I: C_0 \mapsto D$  and $I: C_n \mapsto \mathcal{P}(D^n)$, where $\mathcal{P}$ is power set and $D^n = \overbrace{D\times\ldots\times D}^{n \text{ times}}$ (the $n$th order Cartesian product of $D$);
+\item $g$,  the \uterm{assignment function}, is some functional mapping $g: V \mapsto D$.
+\end{itemize}
+
+\qed
+\end{udefinition}
+
+
+\begin{udefinition}[Extension of an assignment function]
+Given a model $\mathcal{M} = \langle D,I,g,\crbr{0,1} \rangle$ with an assignment function $g: V \mapsto D$, for an $\nu \in V$ and $\delta \in D $, $\fnex{g}{\nu}{\gamma}$ is a function exactly like $g$, possibly except it maps $\nu$ to $\delta$.
+\qed
+\end{udefinition}
+
+\begin{udefinition}[Semantics for FOL]
+Given a model $\mathcal{M} = \langle D,I,g,\crbr{0,1} \rangle$,
+
+\begin{itemize}
+\item[i.]  \interp{$\alpha$}$^g$ $= {g(\alpha)}$, if $\alpha\in V$;
+\item[ii.]  \interp{$\alpha$}$^g$ $=  I(\alpha)$, if $\alpha\in C_0$;
+\item[iii.] \interp{$\Pi\alpha_1,\ldots,\alpha_n$}$^g$ $= 1$, iff $\langle\interp{$\alpha_1$},\ldots,\interp{$\alpha_n$}\rangle \in I \left( \Pi \right)$, and  0, otherwise; 
+\item[iv$^\prime$.] \interp{$(\neg\phi)$}$^g$ $= 1$, iff $\interp{$\phi$} = 0$, and 0, otherwise;
+\item[iv$^{\prime\prime}$.] \interp{$(\phi \land \psi)$}$^g$ $= 1$, iff $\interp{$\phi$} = 1$  and $\interp{$\psi$} = 1$, and 0, otherwise;
+\item[iv$^{\prime\prime\prime}$.] \interp{$(\phi \lor \psi)$}$^g$ $= 0$, iff $\interp{$\phi$} = 0$  and $\interp{$\psi$} = 0$, and 1, otherwise;
+\item[iv$^{\prime\prime\prime\prime}$.] \interp{$(\phi \cond \psi)$}$^g$ $= 0$, iff $\interp{$\phi$} = 1$  and $\interp{$\psi$} = 0$, and 1, otherwise;
+ \item[v$^\prime$.] \interp{$\forall\alpha\phi$}$^g$ $= 1$, iff for all $\delta\in D$, \interp{$\phi$}$^\fnex{g}{\alpha}{\delta} = 1$, and 0, otherwise; 
+ \item[v$^{\prime\prime}$.] \interp{$\exists\alpha\phi$}$^g$ $= 1$, iff there exists at least one $\delta\in D$ such that \interp{$\phi$}$^\fnex{g}{\alpha}{\delta} = 1$, and 0, otherwise; 
+\end{itemize}
+
+\qed
+\end{udefinition}
+
+
 
 \begin{uexercise}
 Express the following sentences in predicate logic:
@@ -193,7 +208,10 @@ If an instructor fails, every student passes.
 \item
 No student failed.
 \item Some humans love math, but not all who love math are humans.
+\item No book is worth reading, except if it is written before 1900. 
 \item People without friends are unhappy unless they love reading.
+\item Only people without friends are happy.
+\item All but one student failed. 
 }
 \end{uexercise}
 }
@@ -202,12 +220,9 @@ No student failed.
 
 \ezimeti{
 
-\item All the rules and techniques of natural deduction for propositional logic
-also apply to predicate logic.
+\item All the rules and techniques of natural deduction for propositional logic also apply to predicate logic.
 
-\item In addition to them, we introduce introduction and elimination rules for
-the quantifiers.\footnote{Note that we do not cover terms and identity,
-therefore you may skip those parts in Huth\&Ryan.}
+\item In addition to them, we introduce introduction and elimination rules for the quantifiers.\footnote{Note that we do not cover terms and identity, therefore you may skip those parts in Huth\&Ryan.}
 
 
 \item[] {\bf The universal quantifier:}
@@ -230,10 +245,7 @@ provided that $u$ is free for $x$ in $\phi$.
 \UnaryInfC{$\forall x\, \phi$}
 \end{prooftree}
 
-The logic of the rule is: if you can prove that a formula holds for an
-\emph{arbitrary} individual, then it holds for every individual. In order to
-guarantee that $u$ is arbitrary, it is required that it is ``fresh'' in the
-sense that it does not occur anywhere outside of the box. 
+The logic of the rule is: if you can prove that a formula holds for an \emph{arbitrary} individual, then it holds for every individual. In order to guarantee that $u$ is arbitrary, it is required that it is ``fresh'' in the sense that it does not occur anywhere outside of the box. 
 
 \item[] {\bf The existential quantifier:}
 
@@ -245,8 +257,7 @@ sense that it does not occur anywhere outside of the box.
 \UnaryInfC{$\exists x\, \phi$}
 \end{prooftree}
 
-The idea is that if a formula holds for an individual, then you can deduce that
-there exists something that makes the formula hold.
+The idea is that if a formula holds for an individual, then you can deduce that there exists something that makes the formula hold.
 
 \item[] Elimination:
 
@@ -260,16 +271,9 @@ provided that $u$ is free for $x$ in $\phi$ and $u$  is ``fresh'' -- it does not
 occur outside of the box.
 
 
-Here the logic is similar to $\lor$-elimination. You know that $\phi$ holds for
-at least one individual, but you do not know which. You assume an arbitrary
-individual $u$ and that $\phi$ holds for it. If this assumption leads you to $\chi$,
-which does not include $u$, then you can deduce that $\chi$ holds. 
+Here the logic is similar to $\lor$-elimination. You know that $\phi$ holds for at least one individual, but you do not know which. You assume an arbitrary individual $u$ and that $\phi$ holds for it. If this assumption leads you to $\chi$, which does not include $u$, then you can deduce that $\chi$ holds. 
 
-Let's take a real-world example. Suppose you have 12 friends. You know that at
-least one of them betrayed you. You sit and think about each, James, Andrew,
-Matthew, Judas, and others. You find out that \emph{whichever} you pick as the
-traitor, there is a reason that you are in trouble. As you know that at least one of them
-\emph{did} betray you, you conclude that you are in trouble.  
+Let's take a real-world example. Suppose you have 12 friends. You know that at least one of them betrayed you. You sit and think about each, James, Andrew, Matthew, Judas, and others. You find out that \emph{whichever} you pick as the traitor, there is a reason that you are in trouble. As you know that at least one of them \emph{did} betray you, you conclude that you are in trouble.  
 
 \newpage
 \begin{uexercise}
@@ -291,7 +295,3 @@ Prove the following:
 % \bibliography{ozge}
 % \bibliographystyle{natgig}
 \end{document}
-
-\section{Models and truth in a model}
-\section{Validity and implication}
-\section{Natural deduction} 
