@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage{natbib,unatbib}
 \usepackage[nohide,twocolumn]{ulecnot}
+\usepackage{usynsem}
 \usepackage{uprog}
 \usepackage{utheorem}
 \usepackage{linguex}
@@ -57,13 +58,13 @@ Application of a function to its argument is depicted by concatenating the funct
 So far everything appears as a little more cryptic way of defining functions and computing the result of applying a function to its argument. The real power of lambda calculus becomes visible when you apply functions to other functions, in exactly the same way you apply them to non-function arguments. We will illustrate this over function composition. Things will get a little complicated at this point; either go very slowly, or have a first pass, read on and come back. In either case you need to use pencil and paper to understand the transitions between forms.  Now let us have the following higher order function that composes two functions -- the lambda calculus way of having $f_1\circ f_2$:
 
 \begin{align}
-(\lambda f_1.(\lambda f_2.(\lambda z.(f_1(f_2z))))
+(\lambda f_1.(\lambda f_2.(\lambda z.(f_1(f_2z)))))
 \end{align}
 
 First apply this to $(\lambda x. x + 2)$:
 
 \begin{align}
-& ((\lambda f_1.(\lambda f_2.(\lambda z.(f_1(f_2z)))) (\lambda x. x +2))\\
+& ((\lambda f_1.(\lambda f_2.(\lambda z.(f_1(f_2z))))) (\lambda x. x +2))\\
 =& (\lambda f_2.(\lambda z.((\lambda x. x +2)(f_2z)))) \nonumber
 \end{align}
 
@@ -114,7 +115,7 @@ $(\lambda\alpha.\omega)$ is a lambda term; \hfill (abstraction)
 \qed
 \end{udefinition} 
 
-We usually shorten ``lambda term'' to ``term''. Given a name $\alpha$, we call the expression $\lambda\alpha$ a ``lambda binder''.
+We usually shorten ``lambda term'' to ``term''. Given a name $\alpha$, we call the expression `$\lambda\alpha$' a ``lambda binder''.
 
 \begin{uexample}\label{fullex}
 Some example terms:
@@ -152,7 +153,7 @@ f(xyz) & \equiv   (f((xy)z))\\
 f(xy)z & \equiv   ((f(xy))z) 
 \end{align*}
 
-\item[C.] The scope of dot extends to right until the first right parenthesis whose matching pair falls to the left of the dot:
+\item[C.] The scope of dot extends to right until the first right parenthesis whose matching pair falls to the left of the dot. In restoring parentheses, put a left parenthesis just before the first lambda sign you encounter to the left of the dot, then start to scan rightwards, and put a right parenthesis at the point you encounter a right parenthesis unmatched during your rightward scan or the end of the term.
 
 \begin{align*}
 (\lambda x.xx)y & \equiv ((\lambda x.xx)y) \not\equiv \lambda x.xxy\\
@@ -177,8 +178,8 @@ The terms in Example~\ref{fullex} in simplified form:
 ((xy)z) &\equiv xyz\\
 (\lambda x.x) &\equiv \lambda x.x\\
 (\lambda y.(\lambda x.x)) &\equiv \lambda y.\lambda x.x\\
-(\lambda z.(x(\lambda y.(yz)))) &\equiv \lambda z.(x(\lambda y.yz))\\
-(x(\lambda z.(\lambda y.(yz)))) &\equiv x(\lambda z.\lambda y.yz)\\
+(\lambda z.(x(\lambda y.(yz)))) &\equiv \lambda z.x(\lambda y.yz)\\
+(x(\lambda z.(\lambda y.(yz)))) &\equiv x(\lambda z\lambda y.yz)\\
 (x(\lambda x.x)) &\equiv x(\lambda x.x)\\
 ((\lambda y.(\lambda x.x))(\lambda x.x)) &\equiv (\lambda y\lambda x.x)\lambda x.x\\
 (((\lambda y.(\lambda x.x))(\lambda x.x))(xy)) &\equiv (\lambda y\lambda x.x)(\lambda x.x)(xy)\\
@@ -301,15 +302,20 @@ We need some auxiliary definitions before we define bondage and freedom.
 
 \medskip
 \noindent {\bf Occurrence}\\
-The notions of bondage and freedom are defined for \uterm{occurrences} of names and lambda binders. Each leaf\footnote{Leaves are nodes without children.} in the construction tree of a lambda term s either an occurrence of a name or a lambda binder. Names also occur as part of lambda binders, but in the technical sense we define here occurrence of a name does not include such cases. For instance the name $x$ has 1 occurrence in \xxref{extree}{a} and 2 occurrences in \xxref{extree}{b}.
+The notions of bondage and freedom are defined for \uterm{occurrences} of names and lambda binders. Each leaf\footnote{Leaves are nodes without children.} in the construction tree of a lambda term is either an occurrence of a name or a lambda binder. Names also occur as part of lambda binders, but in the technical sense we define here occurrence of a name does not include such cases. For instance the name $x$ has 1 occurrence in \xxref{extree}{a} and 2 occurrences in \xxref{extree}{b}.
 
 \medskip
 \noindent {\bf Step}\\
-In traversing a tree, going from one node to an adjacent\footnote{Two nodes are adjacent if there exists a line connecting them without any nodes in between.} node is one \uterm{step}.
+In traversing a tree, going from one node to an adjacent\footnote{Two nodes are adjacent if there exists a line connecting them without any nodes in between.} node is one \uterm{step}. Steps can be taken down or up.
+
+\medskip
+\noindent {\bf Command}\\
+A node $\alpha$ in a tree $\Gamma$ commands a node $\beta$ in the same tree iff you can go one step up from $\alpha$ and go down one or more steps down to reach $\beta$.
+
 
 \medskip
 \noindent {\bf Bondage}\\
-Given a term $\Gamma$ and a name $\alpha$, an occurrence of $\alpha$ is \uterm{bound} in $\Gamma$ by an occurrence of a lambda binder  $\lambda\alpha$ iff one can go from the name to the lambda term in $n$ steps and there is no other occurrence of $\lambda\alpha$ such that it takes fewer than $n$ steps to reach from the name to that occurrence.
+Given a term $\Gamma$ and a name $\alpha$, an occurrence of $\alpha$ is \uterm{bound} in $\Gamma$ by an occurrence of a lambda binder  $\lambda\alpha$ iff the occurence of $\lambda\alpha$ commands the occurrence of $\alpha$ and there is no occurrence of $\lambda\alpha$ that commands $\alpha$ and closer to it.
 
 Given a term $\Gamma$ and a name $\alpha$, an occurrence of $\alpha$ is \uterm{bound} in $\Gamma$ iff there exists at least one occurrence of a lambda binder $\lambda\alpha$ in $\Gamma$ binding that occurrence of $\alpha$  in $\Gamma$.
 
@@ -349,7 +355,7 @@ Given an expression $\Gamma$ and a name $\alpha$, an occurrence of $\alpha$ is \
 
 \section{$\alpha$-equivalence}
 
-The functions $\lambda x.x$ and $\lambda y.y$ are one and the same functions; they just do the same thing using different names. Similarly for $\lambda f\lambda g.fa(ga)$ and $\lambda g\lambda f.ga(fa)$. We express this relation of being alphabetical variants of the same term as \uterm{\sysm{\mathbf{\alpha}}-equivalence}. Symbolically,
+The functions $\lambda x.x$ and $\lambda y.y$ are one and the same function; they just do the same thing using different names. Similarly for $\lambda f\lambda g.fa(ga)$ and $\lambda g\lambda f.ga(fa)$. We express this relation of being alphabetical variants of the same term as \uterm{\sysm{\mathbf{\alpha}}-equivalence}. Symbolically,
 
 $$
 \lambda f\lambda g.fa(ga) \equiv_\alpha \lambda g\lambda f.ga(fa)
