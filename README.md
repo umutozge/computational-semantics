@@ -1,17 +1,15 @@
-# COGS 543 - Computational Semantics - Fall 2019
+# COGS 543 - Computational Semantics - Fall 2020
 
 Informatics Institute, METU
 
 An introductory course on formal and computational approaches to natural language meaning.
 
-Monday, 11:40-14:30, II-01, Informatics Institute
+Wednesday, 14:40-17:30
 
 [Umut Özge](https://umutozge.github.io)  
-Office hours: by appointment (B208).
 
-[Erolcan Er]()  
-Teaching Assistant 
-Office hours: by appointment.
+[Ecenur Çağırıcı](mailto:ecenur.ca@gmail.com)  
+TA
 
 ### Weekly Schedule
 
@@ -35,36 +33,28 @@ Office hours: by appointment.
 ### Resources 
 
 * Lecture notes (posted as we go along).
-* Weekly readings.
-* Textbook:  
-	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press, UK.
+* Videos
+* Weekly online discussion.
+* Refernce:
+	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press, UK.   
+	Jacobson, P. (2014) Compositional Semantics, Oxford University Press, UK.  
+
 * Lisp companion:  
 	Graham, P. (1996). ANSI Common Lisp. Prentice Hall Inc., NJ.
 
 ### Communication
 
 * Regularly check this page for assignments, readings, notes, etc.
-* Primary forum of discussion is the class.
 * Use and regurlarly check the [newsgroup](https://groups.google.com/forum/#!forum/metu-cogs-543-computational-semantics) for follow-up comments, questions, announcements etc.
 
 ### Requirements
 
-* Assignments (30%):
-	* not graded;
-	* attempt all questions and submit by the deadline to get full credit;
-	* no credit for late submissions.
-* Mid-term exam 1 (date TBA 20%)
-* Mid-term exam 2 (date TBA, 20%)
-* Term project: implementation of a natural language fragment (30%):
-	* Agree with the instructor on the scope of the fragment (date TBA, 5%, not graded)
-	* Interim report (date TBA, 10%, not graded)
-	* Poster submission (date TBA, 15%)
+* Assignments (50%):
+* Term project: implementation of a natural language fragment (50%):
 
-### Attendance and participation
+### Attendance
 
-* When you are unable to attend, write a brief email before the class -- no reason required, just notify.
-* **Missing two classes without giving prior notice gets NA.**
-* When you come, please be on time.
+* not required. 
 
 ### Special assistance
 
