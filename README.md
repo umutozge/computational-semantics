@@ -11,22 +11,32 @@ Wednesday, 14:40-17:30
 [Ecenur Çağırıcı](mailto:ecenur.ca@gmail.com)  
 TA
 
+
+### Online content (please download if your browser can't open the video)
+
+|ID| Topic |
+:---|:--- |
+005|[First-order Logic: Syntax 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/005_fol-syntax-1.mp4)
+007|[First-order Logic: Syntax 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/007_fol-syntax-2.mp4)
+
+
+
 ### Weekly Schedule
 
 |Week| Date   | Topic | Notes |  Assignment | Reading |
 :---|:---|:---|:---|:---|:---
-1   |   | Intro & mathematical preliminaries  | 
-2   |  | Basics of model-theoretic semantics | | | |
-3   |  | Types; representing meanings in LISP| | | |
-4   |  | From sets to functions | |||
-5   |   | Lambda Calculus  | <!--[MT semantics](notes/10_model-theoretic-semantics.pdf)  Sec. 1-3 --> |<!-- [A04](assignments/cogs543-assignment-04.pdf) -->|<!--  Winter (2016), pp. 64-72 -->|
-6   |   | Type-theoretic syntax/semantics |   | <!---[A05](assignments/cogs543-assignment-05.pdf) -->
+1   |   |   | 
+2   |  |  | | | |
+3   |  | | | | |
+4   |  |  | |||
+5   |   |   | <!--[MT semantics](notes/10_model-theoretic-semantics.pdf)  Sec. 1-3 --> |<!-- [A04](assignments/cogs543-assignment-04.pdf) -->|<!--  Winter (2016), pp. 64-72 -->|
+6   |   |  |   | <!---[A05](assignments/cogs543-assignment-05.pdf) -->
 7   |  |  |                             |
-8   | | Composing meaning |                 | <!---[A06](assignments/cogs543-assignment-06.pdf)-->
-9   |  | Quantification I |                  | <!---[A07](assignments/cogs543-assignment-07.pdf)-->
-10  |  | Quantification II |                 | 
-11  |  | Intensionality I  |                 | <!---[A09](assignments/cogs543-assignment-09.pdf)-->
-12  |  | Intensionality II |                 | <!---[A10](assignments/cogs543-assignment-10.pdf)-->
+8   | |  |                 | <!---[A06](assignments/cogs543-assignment-06.pdf)-->
+9   |  |  |                  | <!---[A07](assignments/cogs543-assignment-07.pdf)-->
+10  |  |  |                 | 
+11  |  |  |                 | <!---[A09](assignments/cogs543-assignment-09.pdf)-->
+12  |  |  |                 | <!---[A10](assignments/cogs543-assignment-10.pdf)-->
 13  |  |  |                           | <!---[A11](assignments/cogs543-assignment-11.pdf)-->
 14  |  | |           | <!---[A12](assignments/cogs543-assignment-12.pdf)-->
 
