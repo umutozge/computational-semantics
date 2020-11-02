@@ -18,6 +18,8 @@ TA
 :---|:--- |
 005|[First-order Logic: Syntax 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/005_fol-syntax-1.mp4)
 007|[First-order Logic: Syntax 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/007_fol-syntax-2.mp4)
+009|[First-order Logic: Semantics 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/009_fol-semantics-1.mp4)
+011|[First-order Logic: Semantics 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/011_fol-semantics-2.mp4)
 
 
 
