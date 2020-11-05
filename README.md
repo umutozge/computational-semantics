@@ -20,7 +20,8 @@ TA
 007|[First-order Logic: Syntax 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/007_fol-syntax-2.mp4)
 009|[First-order Logic: Semantics 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/009_fol-semantics-1.mp4)
 011|[First-order Logic: Semantics 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/011_fol-semantics-2.mp4)
-013|[First-order Logic: Interpretation example ](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/013_fol-interpretation-example.mp4)
+013|[First-order Logic: Interpretation example](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/013_fol-interpretation-example.mp4)
+015|[First-order Logic: Translation examples](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/015_fol-translation-examples.mp4)
 
 
 
