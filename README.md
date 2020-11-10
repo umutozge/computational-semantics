@@ -22,6 +22,8 @@ TA
 011|[First-order Logic: Semantics 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/011_fol-semantics-2.mp4)
 013|[First-order Logic: Interpretation example](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/013_fol-interpretation-example.mp4)
 015|[First-order Logic: Translation examples](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/015_fol-translation-examples.mp4)
+020|[Lambda Calculus 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/020_lambda-calculus-1.mp4)
+022|[Lambda Calculus 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/020_lambda-calculus-2.mp4)
 
 
 
