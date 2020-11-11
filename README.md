@@ -24,6 +24,7 @@ TA
 015|[First-order Logic: Translation examples](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/015_fol-translation-examples.mp4)
 020|[Lambda Calculus 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/020_lambda-calculus-1.mp4)
 022|[Lambda Calculus 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/022_lambda-calculus-2.mp4)
+024|[Lambda Calculus 3: Notational convention exercises](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/024_lambda-calculus-3.mp4)
 
 
 
