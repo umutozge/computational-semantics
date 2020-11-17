@@ -22,9 +22,14 @@ TA
 011|[First-order Logic: Semantics 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/011_fol-semantics-2.mp4)
 013|[First-order Logic: Interpretation example](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/013_fol-interpretation-example.mp4)
 015|[First-order Logic: Translation examples](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/015_fol-translation-examples.mp4)
-020|[Lambda Calculus 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/020_lambda-calculus-1.mp4)
-022|[Lambda Calculus 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/022_lambda-calculus-2.mp4)
+020|[Lambda Calculus 1: Introduction](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/020_lambda-calculus-1.mp4)
+022|[Lambda Calculus 2: Syntax](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/022_lambda-calculus-2.mp4)
 024|[Lambda Calculus 3: Notational convention exercises](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/024_lambda-calculus-3.mp4)
+026|[Lambda Calculus 4: Binding](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/026_lambda-calculus-4.mp4)
+028|[Lambda Calculus 5: Alpha-conversion](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/028_lambda-calculus-5.mp4)
+030|[Lambda Calculus 6: Substitution](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/030_lambda-calculus-6.mp4)
+032|[Lambda Calculus 7: Beta-reduction](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/032_lambda-calculus-7.mp4)
+034|[Lambda Calculus 8: Composition example](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/034_lambda-calculus-8.mp4)
 
 
 
