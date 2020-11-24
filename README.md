@@ -30,6 +30,8 @@ TA
 030|[Lambda Calculus 6: Substitution](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/030_lambda-calculus-6.mp4)
 032|[Lambda Calculus 7: Beta-reduction](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/032_lambda-calculus-7.mp4)
 034|[Lambda Calculus 8: Composition example](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/034_lambda-calculus-8.mp4)
+040|[Combination](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/040_combination.mp4)
+042|[Signs](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/042_signs.mp4)
 
 
 
