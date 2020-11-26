@@ -31,9 +31,11 @@ TA
 032|[Lambda Calculus 7: Beta-reduction](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/032_lambda-calculus-7.mp4)
 034|[Lambda Calculus 8: Composition example](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/034_lambda-calculus-8.mp4)
 036|[Lambda Calculus 9: Eta-conversion](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/036_lambda-calculus-9.mp4)
+038|[Currying](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/038_currying.mp4)
 040|[Combination](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/040_combination.mp4)
 042|[Signs](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/042_signs.mp4)
 044|[Directionality](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/044_directionality.mp4)
+046|[Semantic types](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/046_semantic-types.mp4)
 
 
 
