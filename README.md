@@ -36,6 +36,7 @@ TA
 042|[Signs](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/042_signs.mp4)
 044|[Directionality](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/044_directionality.mp4)
 046|[Semantic types](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/046_semantic-types.mp4)
+050|[Noun Phrase Semantics: Introduction](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/050_noun-phrase-semantics-introduction.mp4)
 
 
 
