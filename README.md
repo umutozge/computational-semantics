@@ -39,6 +39,7 @@ TA
 050|[Noun Phrase Semantics: Introduction](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/050_noun-phrase-semantics-introduction.mp4)
 056|[Quantification 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/056_quantification-1.mp4)
 058|[Quantification 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/058_quantification-2.mp4)
+060|[Generalized Quantifiers](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/060_generalized-quantifiers.mp4)
 
 
 
