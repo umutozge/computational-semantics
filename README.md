@@ -40,6 +40,9 @@ TA
 056|[Quantification 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/056_quantification-1.mp4)
 058|[Quantification 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/058_quantification-2.mp4)
 060|[Generalized Quantifiers](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/060_generalized-quantifiers.mp4)
+070|[Coordination 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/070_coordination-1.mp4)
+072|[Coordination 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/072_coordination-2.mp4)
+074|[Coordination 3](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/074_coordination-3.mp4)
 
 
 
