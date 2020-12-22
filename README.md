@@ -43,6 +43,7 @@ TA
 070|[Coordination 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/070_coordination-1.mp4)
 072|[Coordination 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/072_coordination-2.mp4)
 074|[Coordination 3](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/074_coordination-3.mp4)
+076|[Coordination 4](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/076_coordination-4.mp4)
 
 
 
