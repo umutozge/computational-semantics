@@ -46,6 +46,8 @@ TA
 076|[Coordination 4](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/076_coordination-4.mp4)
 080|[Type-raising and composition 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/080_type-raising-and-composition-1.mp4)
 082|[Type-raising and composition 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/082_type-raising-and-composition-2.mp4)
+090|[Relativization 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/090_relativization-1.mp4)
+092|[Relativizatoin 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/092_relativization-2.mp4)
 
 
 
