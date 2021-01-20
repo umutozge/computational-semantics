@@ -50,6 +50,8 @@ TA
 092|[Relativizatoin 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/092_relativization-2.mp4)
 100|[Worlds 1](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/100_worlds-1.mp4)
 102|[Worlds 2](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/102_worlds-2.mp4)
+104|[Worlds 3](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/104_worlds-3.mp4)
+102|[Worlds 4](http://lfcs.ii.metu.edu.tr/var/vid/cogs543/106_worlds-4.mp4)
 
 
 
