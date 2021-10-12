@@ -1,4 +1,4 @@
-# COGS 543 - Computational Semantics - Fall 2020
+# COGS 543 - Computational Semantics
 
 Informatics Institute, METU
 
@@ -11,7 +11,7 @@ Wednesday, 14:40-17:30
 [İlteriş Bozkurt](mailto:ilteris.bozkurt@metu.edu.tr)  
 TA
 
-### Weekly Schedule
+### Weekly Schedule (Fall 2021)
 
 |Week| Date   | Video |  Assignment | Reading |
 :---|:---|:---|:---|:---|:---
