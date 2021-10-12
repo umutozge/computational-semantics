@@ -14,21 +14,21 @@ TA
 ### Weekly Schedule (Fall 2021)
 
 |Week| Date   | Video |  Assignment | Reading |
-:---|:---|:---|:---|:---|:---
-1   |Oct 20| First meeting  | 
-2   | Oct 27 | 005-015 | | | |
-3   | Nov 3  | | | | |
-4   | Nov 10  |  | |||
-5   | Nov 17  |   | |||
-6   | Nov 24  |  |   |
-7   | Nov 31 |  |                             |
-8   | Dec 8 |  |                 | 
-9   | Dec 15 |  |                  | 
-10  | Dec 22 |  |                 | 
-11  | Dec 29 |  |                 | 
-12  | Jan 5  |  |                 | 
-13  | Jan 12 |  |                 |
-14  | Jan 19 | |           | 
+:---|:---|:---|:---|:---|:--- |
+1   |Oct 20  | First meeting | | | 
+2   | Oct 27 | 005-015       | | | 
+3   | Nov 3  |               | | |
+4   | Nov 10 |               | | |
+5   | Nov 17 |               | | |
+6   | Nov 24 |               | | |
+7   | Nov 31 |               | | | 
+8   | Dec 8  |               | | |
+9   | Dec 15 |               | | |
+10  | Dec 22 |               | | |
+11  | Dec 29 |               | | |
+12  | Jan 5  |               | | |
+13  | Jan 12 |               | | | 
+14  | Jan 19 |               | | |
 
 
 ### Online content (please download if your browser can't open the video)
