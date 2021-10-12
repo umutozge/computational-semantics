@@ -8,8 +8,27 @@ Wednesday, 14:40-17:30
 
 [Umut Özge](https://umutozge.github.io)  
 
-[Ecenur Çağırıcı](mailto:ecenur.ca@gmail.com)  
+[İlteriş Bozkurt](mailto:ilteris.bozkurt@metu.edu.tr)  
 TA
+
+### Weekly Schedule
+
+|Week| Date   | Video |  Assignment | Reading |
+:---|:---|:---|:---|:---|:---
+1   |Oct 20| First meeting  | 
+2   | Oct 27 | 005-015 | | | |
+3   | Nov 3  | | | | |
+4   | Nov 10  |  | |||
+5   | Nov 17  |   | |||
+6   | Nov 24  |  |   |
+7   | Nov 31 |  |                             |
+8   | Dec 8 |  |                 | 
+9   | Dec 15 |  |                  | 
+10  | Dec 22 |  |                 | 
+11  | Dec 29 |  |                 | 
+12  | Jan 5  |  |                 | 
+13  | Jan 12 |  |                 |
+14  | Jan 19 | |           | 
 
 
 ### Online content (please download if your browser can't open the video)
@@ -55,30 +74,12 @@ TA
 
 
 
-### Weekly Schedule
-
-|Week| Date   | Topic | Notes |  Assignment | Reading |
-:---|:---|:---|:---|:---|:---
-1   |   |   | 
-2   |  |  | | | |
-3   |  | | | | |
-4   |  |  | |||
-5   |   |   | <!--[MT semantics](notes/10_model-theoretic-semantics.pdf)  Sec. 1-3 --> |<!-- [A04](assignments/cogs543-assignment-04.pdf) -->|<!--  Winter (2016), pp. 64-72 -->|
-6   |   |  |   | <!---[A05](assignments/cogs543-assignment-05.pdf) -->
-7   |  |  |                             |
-8   | |  |                 | <!---[A06](assignments/cogs543-assignment-06.pdf)-->
-9   |  |  |                  | <!---[A07](assignments/cogs543-assignment-07.pdf)-->
-10  |  |  |                 | 
-11  |  |  |                 | <!---[A09](assignments/cogs543-assignment-09.pdf)-->
-12  |  |  |                 | <!---[A10](assignments/cogs543-assignment-10.pdf)-->
-13  |  |  |                           | <!---[A11](assignments/cogs543-assignment-11.pdf)-->
-14  |  | |           | <!---[A12](assignments/cogs543-assignment-12.pdf)-->
-
 ### Resources 
 
 * Lecture notes (posted as we go along).
 * Videos
-* Weekly online discussion.
+* Weekly online [meetings](https://zoom.us/j/92375604853?pwd=S2EyRjNHVUxyRkdFWHpPUjJQbzQwQT09), Meeting ID: 923 7560 4853, Passcode: 759334.
+
 * Reference:  
 	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press, UK.   
 	Jacobson, P. (2014) Compositional Semantics, Oxford University Press, UK.  
@@ -93,8 +94,9 @@ TA
 
 ### Requirements
 
-* Assignments (50%):
-* Term project: implementation of a natural language fragment (50%):
+* Assignments (80%): 
+    - You may work in pairs, a certain pair can submit only one assignment.
+* Final exam (20%, in class). 
 
 ### Attendance
 
