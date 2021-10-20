@@ -8,7 +8,7 @@ Wednesday, 14:40-17:30
 
 [Umut Özge](https://umutozge.github.io)  
 
-[İlteriş Bozkurt](mailto:ilteris.bozkurt@metu.edu.tr)  
+[İlteriş Bozkurt](mailto:ilteris@metu.edu.tr)  
 TA
 
 ### Weekly Schedule (Fall 2021)
@@ -95,7 +95,7 @@ TA
 ### Requirements
 
 * Assignments (80%): 
-    - You may work in pairs, a certain pair can submit only one assignment.
+    - You may work in pairs; a certain pair can submit only one assignment.
 * Final exam (20%, in class). 
 
 ### Attendance
