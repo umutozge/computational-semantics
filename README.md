@@ -19,8 +19,8 @@ TA
 2   | Oct 27 | 005-015       | | | 
 3   | Nov 3  | 005-015       | | |
 4   | Nov 10 | 020-036       | [a01](assignments/cogs543-a01.pdf), due **Nov 7** | |
-5   | Nov 17 |  020-036      | | |
-6   | Nov 24 |               | | |
+5   | Nov 17 | 020-036      | | |
+6   | Nov 24 | 038-044       | [a02](assignments/cogs543-a02.pdf), due **Nov 21**| |
 7   | Nov 31 |               | | | 
 8   | Dec 8  |               | | |
 9   | Dec 15 |               | | |
