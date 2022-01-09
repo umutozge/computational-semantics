@@ -27,7 +27,7 @@ TA
 10  | Dec 22 |        	 	| | |
 11  | Dec 29 | 080-102       | | |
 12  | Jan 5  |               | | |
-13  | Jan 12 |               | | | 
+13  | Jan 12 |               | [a03](assignments/cogs543-a04.pdf), due **Jan 16**| | 
 14  | Jan 19 |               | | |
 
 
