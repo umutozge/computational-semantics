@@ -4,31 +4,31 @@ Informatics Institute, METU
 
 An introductory course on formal and computational approaches to natural language meaning.
 
-Wednesday, 14:40-17:30
+Tuesday, 8:40-11:30
 
 [Umut Özge](https://umutozge.github.io)  
 
 [İlteriş Bozkurt](mailto:ilteris@metu.edu.tr)  
 TA
 
-### Weekly Schedule (Fall 2021)
+### Weekly Schedule (Fall 2022 - Tentative)
 
 |Week| Date   | Content | Assignment | Reading |
 :----|:-------|:--------|:-----------|:--------|
-1   |Oct 20  | First meeting | | | 
-2   | Oct 27 | 005-015       | | | 
-3   | Nov 3  | 005-015       | | |
-4   | Nov 10 | 020-036       | [a01](assignments/cogs543-a01.pdf), due **Nov 7** | |
-5   | Nov 17 | 020-036      | | |
-6   | Nov 24 | 038-044       | [a02](assignments/cogs543-a02.pdf), due **Nov 21**| |
-7   | Dec 1  | 046-060       | | | 
-8   | Dec 8  | 070-076       | [a03](assignments/cogs543-a03.pdf), due **Dec 12**| |
-9   | Dec 15 |               | | |
-10  | Dec 22 |        	 	| | |
-11  | Dec 29 | 080-102       | | |
-12  | Jan 5  |               | | |
-13  | Jan 12 |               | [a04](assignments/cogs543-a04.pdf), due **Jan 16**| | 
-14  | Jan 19 |               | | |
+1   | Oct 4   | First meeting | | | 
+2   | Oct 11 | 005-015       | | | 
+3   | Oct 18 | 005-015       | | |
+4   | Oct 25 | 020-036       | [a01](assignments/cogs543-a01.pdf), due **Nov 7** | |
+5   | Nov 1 | 020-036      | | |
+6   | Nov 8| | 038-044       | [a02](assignments/cogs543-a02.pdf), due **Nov 21**| |
+7   | Nov 15 | 046-060       | | | 
+8   | Nov 22 | 070-076       | [a03](assignments/cogs543-a03.pdf), due **Dec 12**| |
+9   | Nov 29 |               | | |
+10  | Dec 6| |        	 	| | |
+11  | Dec 13 | 080-102       | | |
+12  | Dec 20 |               | | |
+13  | Dec 27 |               | [a04](assignments/cogs543-a04.pdf), due **Jan 16**| | 
+14  | Jan 3  | |               | | |
 
 
 ### Online content (please download if your browser can't open the video)
@@ -78,7 +78,6 @@ TA
 
 * Lecture notes (posted as we go along).
 * Videos
-* Weekly online [meetings](https://zoom.us/j/92375604853?pwd=S2EyRjNHVUxyRkdFWHpPUjJQbzQwQT09), Meeting ID: 923 7560 4853, Passcode: 759334.
 
 * Reference:  
 	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press, UK.   
@@ -89,18 +88,21 @@ TA
 
 ### Communication
 
-* Regularly check this page for assignments, readings, notes, etc.
-* Use and regurlarly check the [newsgroup](https://groups.google.com/forum/#!forum/metu-cogs-543-computational-semantics) for follow-up comments, questions, announcements etc.
+* Follow and contribute to `odtuclass` for announcements and discussion.
+* Drop us an email if you want to be a guest student in this course.
 
 ### Requirements
 
 * Assignments (80%): 
-    - You may work in pairs; a certain pair can submit only one assignment.
 * Final exam (20%, in class). 
 
-### Attendance
 
-* not required. 
+### Attendance and late submission policies
+
+* Attendance is not graded or required.
+* If you think you can succeed in this course without help from us, you do not need to attend classes.
+* But if you think otherwise, you should come -- only attenders can get help outside of class hours (e.g.\ office hours, forum questions, etc.)
+* No late submissions, except in case of a medical issue proved by a medical report.
 
 ### Special assistance
 
