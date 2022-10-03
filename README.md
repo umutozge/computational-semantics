@@ -73,7 +73,6 @@ TA
 102|[Worlds 4](http://lfcs.ii.metu.edu.tr/cr/cogs543/vid/106_worlds-4.mp4)
 
 
-
 ### Resources 
 
 * Lecture notes (posted as we go along).
@@ -89,19 +88,15 @@ TA
 ### Communication
 
 * Follow and contribute to `odtuclass` for announcements and discussion.
-* Drop us an email if you want to be a guest student in this course.
+* Drop us an email, if you want to be a guest student in this course.
 
 ### Requirements
 
-* Assignments (80%): 
-* Final exam (20%, in class). 
-
+* (Bi)weekly assignments
 
 ### Attendance and late submission policies
 
-* Attendance is not graded or required.
-* If you think you can succeed in this course without help from us, you do not need to attend classes.
-* But if you think otherwise, you should come -- only attenders can get help outside of class hours (e.g.\ office hours, forum questions, etc.)
+* Attendance is not compulsory, but suggested.
 * No late submissions, except in case of a medical issue proved by a medical report.
 
 ### Special assistance
