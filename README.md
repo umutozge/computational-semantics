@@ -17,18 +17,18 @@ TA
 :----|:-------|:--------|:-----------|:--------|
 1   | Oct 4   | First meeting | | | 
 2   | Oct 11 | 005-015       | | | 
-3   | Oct 18 | 005-015       | | |
-4   | Oct 25 | 020-036       | [a01](assignments/cogs543-a01.pdf), due **Nov 7** | |
-5   | Nov 1 | 020-036      | | |
-6   | Nov 8| | 038-044       | [a02](assignments/cogs543-a02.pdf), due **Nov 21**| |
+3   | Oct 18 | 005-015       |[a01](assignments/cogs543-assignment-01.pdf) | |
+4   | Oct 25 | 020-036       | | |
+5   | Nov 1 | 020-036        | | |
+6   | Nov 8| | 038-044       | | |
 7   | Nov 15 | 046-060       | | | 
-8   | Nov 22 | 070-076       | [a03](assignments/cogs543-a03.pdf), due **Dec 12**| |
+8   | Nov 22 | 070-076       | | |
 9   | Nov 29 |               | | |
 10  | Dec 6| |        	 	| | |
 11  | Dec 13 | 080-102       | | |
 12  | Dec 20 |               | | |
-13  | Dec 27 |               | [a04](assignments/cogs543-a04.pdf), due **Jan 16**| | 
-14  | Jan 3  | |               | | |
+13  | Dec 27 |               | | | 
+14  | Jan 3  | |             | | |
 
 
 ### Online content (please download if your browser can't open the video)
