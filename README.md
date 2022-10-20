@@ -18,8 +18,8 @@ TA
 1   | Oct 4   | First meeting | | | 
 2   | Oct 11 | 005-015       | | | 
 3   | Oct 18 | 005-015       |[a01](assignments/cogs543-assignment-01.pdf) | |
-4   | Oct 25 | 020-026       |[a02](assignments/cogs543-assignment-02.pdf) | |
-5   | Nov 1  | 026-036        | | |
+4   | Oct 25 | 020-036       |[a02](assignments/cogs543-assignment-02.pdf) | |
+5   | Nov 1  | 020-036        | | |
 6   | Nov 8| | 038-044       | | |
 7   | Nov 15 | 046-060       | | | 
 8   | Nov 22 | 070-076       | | |
