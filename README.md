@@ -21,7 +21,7 @@ TA
 4   | Oct 25 | 020-036       |[a02](assignments/cogs543-assignment-02.pdf) | |
 5   | Nov 1  | 020-036       |[a03](assignments/cogs543-assignment-03.pdf)  | |
 6   | Nov 8  | 038-044       | | |
-7   | Nov 15 | 046-060       | | |
+7   | Nov 15 | 046-060       |[a04](assignments/cogs543-assignment-04.pdf) | |
 8   | Nov 22 | 070-076       | | |
 9   | Nov 29 |               | | |
 10  | Dec 6| |        	 	| | |
