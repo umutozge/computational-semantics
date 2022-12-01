@@ -16,19 +16,19 @@ TA
 |Week| Date   | Content | Assignment | Reading |
 :----|:-------|:--------|:-----------|:--------|
 1   | Oct 4   | First meeting | | |
-2   | Oct 11 | 005-015       | | |
-3   | Oct 18 | 005-015       |[a01](assignments/cogs543-assignment-01.pdf) | |
-4   | Oct 25 | 020-036       |[a02](assignments/cogs543-assignment-02.pdf) | |
-5   | Nov 1  | 020-036       |[a03](assignments/cogs543-assignment-03.pdf)  | |
-6   | Nov 8  | 038-044       | | |
-7   | Nov 15 | 046-060       |[a04](assignments/cogs543-assignment-04.pdf) | |
-8   | Nov 22 | 070-076       |[a05](assignments/cogs543-assignment-05.pdf)| |
-9   | Nov 29 | 080-082       |[a06](assignments/cogs543-assignment-06.pdf) | |
-10  | Dec 6| | 090-092   	 	 |[a07](assignments/cogs543-assignment-07.pdf) | |
-11  | Dec 13 |      | | |
-12  | Dec 20 |               | | |
-13  | Dec 27 |               | | |
-14  | Jan 3  | |             | | |
+2   | Oct 11  | 005-015       | | |
+3   | Oct 18  | 005-015       |[a01](assignments/cogs543-assignment-01.pdf) | |
+4   | Oct 25  | 020-036       |[a02](assignments/cogs543-assignment-02.pdf) | |
+5   | Nov 1   | 020-036       |[a03](assignments/cogs543-assignment-03.pdf)  | |
+6   | Nov 8   | 038-044       | | |
+7   | Nov 15  | 046-060       |[a04](assignments/cogs543-assignment-04.pdf) | |
+8   | Nov 22  | 070-076       |[a05](assignments/cogs543-assignment-05.pdf) | |
+9   | Nov 29  | 080-082       |[a06](assignments/cogs543-assignment-06.pdf) | |
+10  | Dec 6   | 090-092   	 	|[a07](assignments/cogs543-assignment-07.pdf) | |
+11  | Dec 13  |               | | |
+12  | Dec 20  |               | | |
+13  | Dec 27  |               | | |
+14  | Jan 3   |               | | |
 
 
 ### Online content (please download if your browser can't open the video)
