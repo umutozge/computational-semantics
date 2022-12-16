@@ -26,7 +26,7 @@ TA
 9   | Nov 29  | 080-082       |[a06](assignments/cogs543-assignment-06.pdf) | |
 10  | Dec 6   | 090-092   	 	|[a07](assignments/cogs543-assignment-07.pdf) | |
 11  | Dec 13  | 100-102       |[a08](assignments/cogs543-assignment-08.pdf)| |
-12  | Dec 20  |               | | |
+12  | Dec 20  | 104-106       |[a09](assignments/cogs543-assignment-09.pdf) | |
 13  | Dec 27  |               | | |
 14  | Jan 3   |               | | |
 
@@ -70,7 +70,7 @@ TA
 100|[Worlds 1](http://lfcs.ii.metu.edu.tr/cr/cogs543/vid/100_worlds-1.mp4)
 102|[Worlds 2](http://lfcs.ii.metu.edu.tr/cr/cogs543/vid/102_worlds-2.mp4)
 104|[Worlds 3](http://lfcs.ii.metu.edu.tr/cr/cogs543/vid/104_worlds-3.mp4)
-102|[Worlds 4](http://lfcs.ii.metu.edu.tr/cr/cogs543/vid/106_worlds-4.mp4)
+106|[Worlds 4](http://lfcs.ii.metu.edu.tr/cr/cogs543/vid/106_worlds-4.mp4)
 
 
 ### Resources 
