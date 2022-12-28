@@ -28,7 +28,7 @@ TA
 11  | Dec 13  | 100-102       |[a08](assignments/cogs543-assignment-08.pdf)| |
 12  | Dec 20  | 104-106       |[a09](assignments/cogs543-assignment-09.pdf) | |
 13  | Dec 27  |               | | |
-14  | Jan 3   |               | | |
+14  | Jan 3   |               |[a10](assignments/cogs543-assignment-10.pdf) | |
 
 
 ### Online content (please download if your browser can't open the video)
