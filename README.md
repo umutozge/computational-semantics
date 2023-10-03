@@ -4,31 +4,31 @@ Informatics Institute, METU
 
 An introductory course on formal and computational approaches to natural language meaning.
 
-Tuesday, 8:40-11:30
+Tuesday, 14:40-17:30
 
 [Umut Özge](https://umutozge.github.io)  
 
-[İlteriş Bozkurt](mailto:ilteris@metu.edu.tr)  
+[Ali Eren Çetintaş](mailto:cetintas.alieren@gmail.com)  
 TA
 
 ### Weekly Schedule (Fall 2022 - Tentative)
 
 |Week| Date   | Content | Assignment | Reading |
 :----|:-------|:--------|:-----------|:--------|
-1   | Oct 4   | First meeting | | |
-2   | Oct 11  | 005-015       | | |
-3   | Oct 18  | 005-015       |[a01](assignments/cogs543-assignment-01.pdf) | |
-4   | Oct 25  | 020-036       |[a02](assignments/cogs543-assignment-02.pdf) | |
-5   | Nov 1   | 020-036       |[a03](assignments/cogs543-assignment-03.pdf)  | |
-6   | Nov 8   | 038-044       | | |
-7   | Nov 15  | 046-060       |[a04](assignments/cogs543-assignment-04.pdf) | |
-8   | Nov 22  | 070-076       |[a05](assignments/cogs543-assignment-05.pdf) | |
-9   | Nov 29  | 080-082       |[a06](assignments/cogs543-assignment-06.pdf) | |
-10  | Dec 6   | 090-092   	 	|[a07](assignments/cogs543-assignment-07.pdf) | |
-11  | Dec 13  | 100-102       |[a08](assignments/cogs543-assignment-08.pdf)| |
-12  | Dec 20  | 104-106       |[a09](assignments/cogs543-assignment-09.pdf) | |
-13  | Dec 27  |               | | |
-14  | Jan 3   |               |[a10](assignments/cogs543-assignment-10.pdf) | |
+1   | Oct 3   | First meeting || |
+2   | Oct 10  | 005-015       || |
+3   | Oct 17  | 005-015       || |
+4   | Oct 24  | 020-036       || |
+5   | Oct 31  | 020-036       || |
+6   | Nov 7   | 038-044       || |
+7   | Nov 14  | 046-060       || |
+8   | Nov 21  | 070-076       || |
+9   | Nov 28  | 080-082       || |
+10  | Dec 5   | 090-092       || |
+11  | Dec 12  | 100-102       || |
+12  | Dec 19  | 104-106       || |
+13  | Dec 26  |               || |
+14  | Jan 2   |               || |
 
 
 ### Online content (please download if your browser can't open the video)
@@ -75,15 +75,13 @@ TA
 
 ### Resources 
 
-* Lecture notes (posted as we go along).
-* Videos
+* Lecture notes (posted as we go along).  
+
+* Videos  
 
 * Reference:  
 	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press, UK.   
 	Jacobson, P. (2014) Compositional Semantics, Oxford University Press, UK.  
-
-* Lisp companion:  
-	Graham, P. (1996). ANSI Common Lisp. Prentice Hall Inc., NJ.
 
 ### Communication
 
@@ -92,11 +90,13 @@ TA
 
 ### Requirements
 
-* (Bi)weekly assignments
+* Assignments (min 5, may be more, 50%)
+* Term report (in latex, 50%)
 
 ### Attendance and late submission policies
 
-* Attendance is not compulsory, but suggested.
+* You must drop the instructor and the TA an email either before or shortly after you miss a class. Missing 3 classes without a medical excuse proved by a report is fine. Each miss after that takes one letter down from your final grade.
+* A miss without an email means fail.
 * No late submissions, except in case of a medical issue proved by a medical report.
 
 ### Special assistance
