@@ -16,7 +16,7 @@ TA
 |Week| Date   | Content | Assignment | Reading |
 :----|:-------|:--------|:-----------|:--------|
 1   | Oct 3   | First meeting || |
-2   | Oct 10  | 005-015       || |
+2   | Oct 10  | 005-015       || [FOL notes](notes/02_first-order-logic.pdf) |
 3   | Oct 17  | 005-015       || |
 4   | Oct 24  | 020-036       || |
 5   | Oct 31  | 020-036       || |
@@ -96,7 +96,6 @@ TA
 ### Attendance and late submission policies
 
 * You must drop the instructor and the TA an email either before or shortly after you miss a class. Missing 3 classes without a medical excuse proved by a report is fine. Each miss after that takes one letter down from your final grade.
-* A miss without an email means fail.
 * No late submissions, except in case of a medical issue proved by a medical report.
 
 ### Special assistance
