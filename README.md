@@ -17,7 +17,7 @@ TA
 :----|:-------|:--------|:-----------|:--------|
 1   | Oct 3   | First meeting || |
 2   | Oct 10  | 005-015       || [FOL notes](notes/02_first-order-logic.pdf) |
-3   | Oct 17  | 005-015       || |
+3   | Oct 17  | 005-015       |Study [fol-ps](assignments/ps/00_fol-ps.pdf) (no submission)| |
 4   | Oct 24  | 020-036       || |
 5   | Oct 31  | 020-036       || |
 6   | Nov 7   | 038-044       || |
