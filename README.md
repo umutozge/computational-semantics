@@ -21,12 +21,12 @@ TA
 4   | Oct 24  | 020-036       || |
 5   | Oct 31  | 020-036       || |
 6   | Nov 7   | 038-044       || |
-7   | Nov 14  | 046-060       || |
-8   | Nov 21  | 070-076       || |
-9   | Nov 28  | 080-082       || |
-10  | Dec 5   | 090-092       || |
-11  | Dec 12  | 100-102       || |
-12  | Dec 19  | 104-106       || |
+7   | Nov 14  |               |[Assignment 1](assignments/cogs543-assignment-1.pdf)| Sections 2.1-3 from "Parts of a Whole"|
+8   | Nov 21  |               || |
+9   | Nov 28  |               || |
+10  | Dec 5   |               || |
+11  | Dec 12  |               || |
+12  | Dec 19  |               || |
 13  | Dec 26  |               || |
 14  | Jan 2   |               || |
 
@@ -82,6 +82,7 @@ TA
 * Reference:  
 	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press, UK.   
 	Jacobson, P. (2014) Compositional Semantics, Oxford University Press, UK.  
+	Champollion, L. (2017) Parts of a Whole. Oxford Unviersity Press, UK.  
 
 ### Communication
 
