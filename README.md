@@ -22,7 +22,7 @@ TA
 5   | Oct 31  | 020-036       || |
 6   | Nov 7   | 038-044       || |
 7   | Nov 14  |               |[Assignment 1](assignments/cogs543-assignment-1.pdf)| Sections 2.1-3 from "Parts of a Whole"|
-8   | Nov 21  |               || |
+8   | Nov 21  |               || Sections 2.4-5 from "Parts of a Whole"|
 9   | Nov 28  |               || |
 10  | Dec 5   |               || |
 11  | Dec 12  |               || |
