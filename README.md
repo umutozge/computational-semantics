@@ -80,6 +80,7 @@ TA
 * Videos  
 
 * Reference:  
+	Coppock, E. and Champollion L. (in prep) [Invitation to Formal Semantics](notes/semantics-boot-camp.pdf).  
 	Winter, Y. (2017) Elements of Formal Semantics, Edinburgh University Press, UK.   
 	Jacobson, P. (2014) Compositional Semantics, Oxford University Press, UK.  
 	Champollion, L. (2017) Parts of a Whole. Oxford Unviersity Press, UK.  
