@@ -24,7 +24,7 @@ TA
 7   | Nov 14  |               |[Assignment 1](assignments/cogs543-assignment-1.pdf)| Sections 2.1-3 from "Parts of a Whole"|
 8   | Nov 21  |               |Install Lambda Calculator| Ch. 6 of "Invitation"|
 9   | Nov 28  |               || Sections 7.1 and 7.4 |
-10  | Dec 5   |               |Ch. 6, Exx. 27, 28| |
+10  | Dec 5   |               |Ch. 6, Exx. 27, 28 (in LC)| |
 11  | Dec 12  |               || |
 12  | Dec 19  |               || |
 13  | Dec 26  |               || |
