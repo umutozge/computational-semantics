@@ -1,0 +1,90 @@
+\documentclass[10pt,a4paper]{exam}
+
+\usepackage{umut}
+\usepackage{uling}
+\usepackage{mathptmx}
+\usepackage{uprog}
+\usepackage{uhref}
+\usepackage{usynsem}
+
+%\printanswers
+
+\pagestyle{headandfoot}
+	\lhead{Cogs 543 \\ Computational Semantics}
+	\chead{Assignment 3}
+	\rhead{Fall 2023\\ due Dec 12, before class}
+\lfoot{}
+\pointname{\%}
+
+\begin{document}
+\qformat{\bf Q \thequestion.%
+\ifthenelse{\equal{\thepoints}{}}{}{\quad (\thepoints)} \hfill}
+
+% \makebox[\textwidth]{Name of the Student:\enspace\hrulefill}
+
+\vspace{10pt}
+
+% \begin{center}
+% \fbox{\parbox{6in}{\bf\centering 4 questions in 150 minutes}}
+% \end{center}
+%
+
+\vspace{90pt}
+
+
+Here is your lexicon:
+
+
+\begin{align*}
+	\text{walks}   &:=& \sysm{\lambda x.walk'x}                          &::& \sysm{et}\\
+	\text{loves}   &:=& \sysm{\lambda x\lambda y.love'xy}                &::& \sysm{e(et)}\\
+	\text{reads}   &:=& \sysm{\lambda x\lambda y.read'xy}                &::& \sysm{e(et)}\\
+	\text{John}    &:=& \sysm{j'}                                        &::& \sysm{e}\\
+	\text{Mary}    &:=& \sysm{m'}                                        &::& \sysm{e}\\
+	\text{woman}   &:=& \sysm{\lambda x.woman'x}                         &::& \sysm{et}\\
+	\text{book}    &:=& \sysm{\lambda x.book'x}                          &::& \sysm{et}\\
+	\text{blue}    &:=& \sysm{\lambda p\lambda x.blue'x\land p\cnct{}x}  &::& \sysm{et(et)}\\
+	\text{is}      &:=& \sysm{?}                                         &::& \sysm{?}\\
+	\text{no}      &:=& \sysm{\lambda p\lambda q.\neg(\exists x. px \land qx)} &::& \sysm{et(ett)}\\
+	\text{a}       &:=& \sysm{\lambda p\lambda q.\exists x. px \land qx} &::& \sysm{et(ett)}\\
+	\text{every}   &:=& \sysm{\lambda p\lambda q.\forall x. px \cond qx} &::& \sysm{et(ett)}\\
+	\text{QOBJ}    &:=_{LEX}& \sysm{?} &::& \sysm{?}
+\end{align*}
+
+\begin{questions}
+\question
+
+The lexicon has only subject position interpretations for the
+quantiifers \emph{a}, \emph{every}, and \emph{no}. You are required to
+write a lexical rule as a lambda term (see \sysm{QOBJ}) that applies
+to quantifier interpretations to turn them to object position
+interpretations. With this in place, you should be able to derive the
+menaing of sentences like:
+
+\ex. (John (reads (every book)))
+
+\question
+
+Derive the meaning of:
+
+\ex. ((No woman) (reads (every (blue book)))).
+
+
+\question
+
+The interpretation for the adjective \emph{blue} is suitable for its
+attributive use only. By this lexicon, we assume that this is its
+basic interpretation. Propose an interpretation for the copula
+\emph{is}, so that you can derive the meaning of sentences like the
+following:
+
+\ex. ((No book) (is blue)).
+
+
+
+\end{questions}
+
+
+Please submit all your answers in Lambda Calculator.
+
+\end{document}
