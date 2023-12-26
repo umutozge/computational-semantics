@@ -28,7 +28,7 @@ TA
 11  | Dec 12  |               |[Assignment 3](assignments/cogs543-assignment-3.pdf)| Sections 11.1-3 ("Invitation")|
 12  | Dec 19  |               || |
 13  | Dec 26  |               || |
-14  | Jan 2   |               || |
+14  | Jan 2   |               |[Assignment 4](assignments/cogs543-assignment-4.pdf)| |
 
 
 ### Online content (please download if your browser can't open the video)
@@ -92,8 +92,8 @@ TA
 
 ### Requirements
 
-* Assignments (min 5, may be more, 50%)
-* Term report (in latex, 50%)
+* 4 Assignments (12.5% each)
+* Final Assignment (50%)
 
 ### Attendance and late submission policies
 

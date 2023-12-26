@@ -1,0 +1,101 @@
+\documentclass[10pt,a4paper]{exam}
+
+\usepackage{umut}
+\usepackage{uling}
+\usepackage{mathptmx}
+\usepackage{uprog}
+\usepackage{uhref}
+\usepackage{usynsem}
+
+%\printanswers
+
+\pagestyle{headandfoot}
+	\lhead{Cogs 543 \\ Computational Semantics}
+	\chead{Assignment 4}
+	\rhead{Fall 2023\\ due Jan 2, before class}
+\lfoot{}
+\pointname{\%}
+
+\begin{document}
+\qformat{\bf Q \thequestion.%
+\ifthenelse{\equal{\thepoints}{}}{}{\quad (\thepoints)} \hfill}
+
+% \makebox[\textwidth]{Name of the Student:\enspace\hrulefill}
+
+\vspace{10pt}
+
+% \begin{center}
+% \fbox{\parbox{6in}{\bf\centering 4 questions in 150 minutes}}
+% \end{center}
+%
+
+\vspace{90pt}
+
+
+Here is your lexicon:
+
+
+\begin{align*}
+	\text{walks}   &:=& \sysm{\lambda x.walk'x}                          &::& \sysm{et}\\[8pt]
+	\text{loves}   &:=& \sysm{\lambda x\lambda y.love'xy}                &::& \sysm{e(et)}\\
+	\text{reads}   &:=& \sysm{\lambda x\lambda y.read'xy}                &::& \sysm{e(et)}\\[8pt]
+	\text{John}    &:=& \sysm{\lambda p.p\cnct{}j'}                      &::& \sysm{ett}\\
+	\text{Mary}    &:=& \sysm{\lambda p.p\cnct{}m'}                      &::& \sysm{ett}\\[8pt]
+	\text{woman}   &:=& \sysm{\lambda x.woman'x}                         &::& \sysm{et}\\
+	\text{book}    &:=& \sysm{\lambda x.book'x}                          &::& \sysm{et}\\[8pt]
+	\text{blue}    &:=& \sysm{\lambda p\lambda x.blue'x\land p\cnct{}x}  &::& \sysm{et(et)}\\[8pt]
+	\text{is}      &:=& \sysm{\lambda p\lambda x.p (\lambda x.x=x) x}    &::& \sysm{et(et)(et)}\\[8pt]
+	\text{no}      &:=& \sysm{\lambda p\lambda q.\neg(\exists x. px \land qx)} &::& \sysm{et(ett)}\\
+	\text{a}       &:=& \sysm{\lambda p\lambda q.\exists x. px \land qx} &::& \sysm{et(ett)}\\
+	\text{every}   &:=& \sysm{\lambda p\lambda q.\forall x. px \cond qx} &::& \sysm{et(ett)}\\[8pt]
+	\text{ACC}     &:=& \sysm{\lambda k \lambda q \lambda y.k (\lambda x.q\cnct{} x\cnct{} y)} &::& \sysm{et(ett)(e(et)et)}\\
+	\text{NOM}     &:=& \sysm{\lambda p.p} &::& \sysm{ett(ett)}\\
+\end{align*}
+
+\begin{questions}
+
+\question[20] The lexicon above is one of the possible models of copula
+and adjectival semantics. It also models two case markers the
+\emph{nominative} and the \emph{accusative}. Make sure that the
+lexicon can deliver what it aims to deliver. Indicate any errors you
+find. Do not think taht there \emph{must} be errors. The lexicon may
+just be fine. Those like the following structures should be interpretable
+correctly.
+
+
+\ex.
+\a. ((NOM John) (reads (ACC (every (blue book))))).
+\b. ((NOM Every woman) (reads (ACC (every (blue book))))).
+
+
+\question
+
+You are required to propose a new lexicon, so that an expression like:
+
+
+\ex.\label{knife} John killed Mary with a knife.
+
+receives the meaning,
+
+
+\ex.\label{knife-interp} \sysm{\lambda e. killing'e\land agent'e\cnct{j'}\land patient'e\cnct{s'}\land \exists x. knife'x \land instr'e\cnct{}x}
+
+
+Notice that (\ref{knife-interp}) is not a type $t$ interpretation, it
+is rather $vt$, where $v$ is the type of eventualities. Therefore,
+(\ref{knife-interp}) denotes a set of event(ualitie)s.
+
+
+You need to model two alternative approaches:
+
+\begin{parts}
+	\part[40] the predicates \sysm{agent'} and \sysm{patient'} are
+	contributed by the verb \emph{kill};
+	\part[40] they come from case marking.
+\end{parts}
+
+in either case the predicate \sysm{instr'} will be contributed by
+\emph{with}.
+
+\end{questions}
+\end{document}
