@@ -160,8 +160,8 @@ You will need to modify  your solution to the previous question to be able to ge
 
 \[
 \begin{align*}
-	\text{walks}   &:=& \sysm{\lambda x\lambda y\lambda f.\exists e . writing' e \land patient' e\, x \land agent' e\, y \land f\, e }  &::& \sysm{e(e(vtt))}\\
-	\text{wrote}   &:=& \sysm{\lambda x\lambda f . \exists e . walking' e \land agent' e x \land f\, e }  &::& \sysm{e(vtt)}
+		\text{wrote}   &:=& \sysm{\lambda x\lambda y\lambda f.\exists e . writing' e \land patient' e\, x \land agent' e\, y \land f\, e }  &::& \sysm{e(e(vtt))}\\
+	\text{walks}   &:=& \sysm{\lambda x\lambda f . \exists e . walking' e \land agent' e\, x \land f\, e }  &::& \sysm{e(vtt)}
 \end{align*}
 \]
 
@@ -189,7 +189,7 @@ arrive at the following interpretations:
 
 \ex.
 \a.  NOM every woman wrote ACC every letter .
-\b. \sysm{\forall x . woman' x \rightarrow \forall y . letter' y \rightarrow \exists e . wrote' e \land patient' e y \land agent' e x \land true'}
+\b. \sysm{\forall x . woman' x \rightarrow \forall y . letter' y \rightarrow \exists e . writing' e \land patient' e y \land agent' e x \land true'}
 
 
 \question[20]
