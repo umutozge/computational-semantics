@@ -1,0 +1,212 @@
+\documentclass[10pt,a4paper]{exam}
+
+\usepackage{umut}
+\usepackage{uling}
+\usepackage{mathptmx}
+\usepackage{uprog}
+\usepackage{utheorem}
+\usepackage{uhref}
+\usepackage{usynsem}
+
+%\printanswers
+
+\pagestyle{headandfoot}
+	\lhead{Cogs 543 \\ Computational Semantics}
+	\chead{Final Assignment }
+	\rhead{Fall 2023\\ due Jan 24}
+\lfoot{}
+\pointname{\%}
+
+\begin{document}
+\qformat{\bf Q \thequestion.%
+\ifthenelse{\equal{\thepoints}{}}{}{\quad (\thepoints)} \hfill}
+
+% \makebox[\textwidth]{Name of the Student:\enspace\hrulefill}
+
+\vspace{10pt}
+
+% \begin{center}
+% \fbox{\parbox{6in}{\bf\centering 4 questions in 150 minutes}}
+% \end{center}
+%
+
+\vspace{90pt}
+
+
+\noindent The tasks assigned below are far from trivial. You may find it helpful to consult the paper,
+
+
+\vspace{10pt}
+
+Champollion, L. (2015) The interaction of compositional semantics and event semantics. {\it Linguistics and Philosophy, 36:31--66.}
+
+
+\vspace{20pt}
+
+
+\noindent Here is a lexicon that could be an answer to Q2-a of Assignment 4 -- remember that $v$ is the type of eventualities.
+
+\begin{ulexicon}
+
+\begin{align*}
+	\text{walks}   &:=& \sysm{\lambda x\lambda e.walking'e \land agent'e\cnct{}x}  &::& \sysm{e(vt)}\\[8pt]
+	\text{killed}  &:=& \sysm{\lambda x\lambda y\lambda e.killing' e \land patient'e\cnct{} x \land agent'e\cnct{} y}   &::& \sysm{e(e(vt))}\\
+	\text{loves}   &:=& \sysm{\lambda x\lambda y\lambda e.loving' e \land theme'e\cnct{} x \land agent'e\cnct{} y}   &::& \sysm{e(e(vt))}\\
+	\text{wrote}  &:=& \sysm{\lambda x\lambda y\lambda e.writing' e \land theme'e\cnct{} x \land agent'e\cnct{} y}   &::& \sysm{e(e(vt))}\\
+	\text{reads}   &:=& \sysm{\lambda x\lambda y\lambda e.reading' e \land theme'e\cnct{} x \land agent'e\cnct{} y}   &::& \sysm{e(e(vt))}\\[8pt]
+	\text{John}    &:=& \sysm{\lambda p.p\cnct{}j'}                      &::& \sysm{ett}\\
+	\text{Mary}    &:=& \sysm{\lambda p.p\cnct{}m'}                      &::& \sysm{ett}\\[8pt]
+	\text{woman}   &:=& \sysm{\lambda x.woman'x}                         &::& \sysm{et}\\
+	\text{book}    &:=& \sysm{\lambda x.book'x}                          &::& \sysm{et}\\
+	\text{knife}   &:=& \sysm{\lambda x.knife'x}                          &::& \sysm{et}\\
+	\text{letter}   &:=& \sysm{\lambda x.letter'x}                          &::& \sysm{et}\\
+	\text{pen}   &:=& \sysm{\lambda x.pen'x}                          &::& \sysm{et}\\[8pt]
+	\text{blue}    &:=& \sysm{\lambda p\lambda x.blue'x\land p\cnct{}x}  &::& \sysm{et(et)}\\[8pt]
+	\text{is}      &:=& \sysm{\lambda p\lambda x.p (\lambda x.x=x) x}    &::& \sysm{et(et)(et)}\\[8pt]
+	\text{no}      &:=& \sysm{\lambda p\lambda q.\neg(\exists x. px \land qx)} &::& \sysm{et(ett)}\\
+	\text{a}       &:=& \sysm{\lambda p\lambda q.\exists x. px \land qx} &::& \sysm{et(ett)}\\
+	\text{every}   &:=& \sysm{\lambda p\lambda q.\forall x. px \cond qx} &::& \sysm{et(ett)}\\[8pt]
+	\text{ACC}     &:=& \sysm{\lambda k \lambda q \lambda y.k (\lambda x.q\cnct{} x\cnct{} y)} &::& \sysm{ett(e(et)(et))}\\
+	\text{NOM}     &:=& \sysm{\lambda p.p} &::& \sysm{ett(ett)}\\[8pt]
+	\text{with}     &:=& \sysm{\lambda q\lambda f\lambda x\lambda e . f\cnct{}x\cnct{}e \land q (instr' e)} &::& \sysm{ett(e(vt))(e(vt))}\\
+\end{align*}
+
+\end{ulexicon}
+
+
+Q2-b could be handled by a lexicon which overwrites the following categories in the previous lexicon:
+
+
+\begin{ulexicon}
+
+\begin{align*}
+	\text{walks}   &:=& \sysm{\lambda e.walking'e}  &::& \sysm{vt}\\[8pt]
+	\text{killed}  &:=& \sysm{\lambda e.killing' e}   &::& \sysm{vt}\\
+	\text{loves}   &:=& \sysm{\lambda e.loving' e}   &::& \sysm{vt}\\
+	\text{reads}   &:=& \sysm{\lambda e.reading' e}   &::& \sysm{vt}\\[8pt]
+	\text{ACC}     &:=& \sysm{\lambda k\lambda q\lambda e.q e \land k (patient' e)} &::& \sysm{ett(vt(vt))}\\
+	\text{NOM}     &:=& \sysm{\lambda k\lambda q\lambda e.q e \land k (agent' e)} &::& \sysm{ett(vt(vt))}\\[8pt]
+	\text{with}    &:=& \sysm{\lambda q\lambda f \lambda e.f\cnct{} e \land q (instr' e)} &::& \sysm{ett(vt(vt))}\\
+\end{align*}
+
+\end{ulexicon}
+
+Both solutions succesfully interpret:
+
+\ex. ((NOM John) ((killed (ACC Mary)) (with (a knife)))).
+
+as,
+
+\ex. \sysm{\lambda e . killing' e \land patient' e\, mary' \land agent' e\, john' \land \exists x . knife' x \land instr' e\, x}
+
+
+This still is not a $t$ type result, it denotes a set of eventualities. It is rather stratightforward to turn this into a $t$ type interpretation with existential closure; and this job can be assigned to an abstract assertion operator that applies after everything gets combined. A suitable ortographic carrier of such function would be the period that ends a sentence -- a sentence ending with a question mark would not assert its content. Here is the lexcial entry:
+
+\begin{ulexicon}
+
+\begin{align*}
+	\text{.}    &:=& \sysm{\lambda f \exists e.f\, e} &::& \sysm{vt(t)}\\
+\end{align*}
+
+\end{ulexicon}
+
+With this in hand, we get:
+
+\ex.
+\a. ((NOM John) ((killed (ACC Mary)) (with (a knife)))).
+\b. \sysm{\exists e . killing' e \land patient' e\, mary' \land agent' e\, john' \land \exists x . knife' x \land instr' e\, x}
+
+which is quite satisfactory.
+
+\begin{questions}
+\question[30] The above solutions are not, however, successful with quantified expressions.
+
+\ex.
+\a. NOM John wrote ACC a letter with a pen.
+\b. \sysm{\exists e.\exists x . letter' x \land \lambda e . writing' e \land patient' e\, x \land agent' e\, john' e \land \exists y . pen' y \land instr' e\, y
+}
+
+
+\ex.
+\a. NOM every man wrote ACC a letter.
+\b. \sysm{\exists e.\forall x . man' x \rightarrow \exists y . letter' y \land \lambda e . writing' e \land patient' e\, y \land agent' e\, x\, e }
+
+
+The obvious problem with these interpretations is the type mismatches caused by the event type lambda binders. Fix them, so that we get:
+
+
+\ex.\label{probex}
+\a.\label{probexEx} NOM Every woman wrote ACC every letter with a pen.
+\b.\label{probexInt}\sysm{\exists e . \forall x . woman' x \rightarrow \forall y . letter' y \rightarrow writing' e \land patient' e y \land agent' e x \land \exists z . pen' z \land instr' e\, z}
+
+
+Build over the lexicon where roles like \emph{agent} and \emph{patient} are contributed by the verb rather than the case markers.
+
+
+\question[50] There remains a problem. The interpretation
+\xref{probexInt} depicts a single writing event that every woman in
+the model contributes to. But the sentence \xref{probexEx}, at least
+in its most prominent reading, is true in a situation where there are
+as many letter writing events as there are women in the model.
+Therefore a more accurate interpretation would be:
+
+
+\ex.
+\a. NOM every man wrote ACC a letter.
+\b. \sysm{\forall x . woman' x \rightarrow \exists y . letter' y \land \exists e . writing' e \land patient' e\, y \land agent' e\, x}
+
+
+You will need to modify  your solution to the previous question to be able to get this type of readings. One way to do it is to give verbs the following definitions:
+
+\[
+\begin{align*}
+	\text{walks}   &:=& \sysm{\lambda x\lambda y\lambda f.\exists e . writing' e \land patient' e\, x \land agent' e\, y \land f\, e }  &::& \sysm{e(e(vtt))}\\
+	\text{wrote}   &:=& \sysm{\lambda x\lambda f . \exists e . walking' e \land agent' e x \land f\, e }  &::& \sysm{e(vtt)}
+\end{align*}
+\]
+
+In this case your assertion operator that closes the formula would be some function that gets rid of $f$:
+
+
+\[
+\begin{align*}
+	\text{.}   &:=& \sysm{\lambda s . s (\lambda e . true')
+}  &::& \sysm{vttt}
+\end{align*}
+\]
+
+
+where \sysm{true'} is a constant that always evaluates to 1 in the model; therefore any part \sysm{\land true'} can safely be deleted from formulas.
+
+With appropriate adjustments to other items you should be able to
+arrive at the following interpretations:
+
+
+\ex.
+\a. (((NOM John) (wrote (ACC (every letter)))) .)
+\b. \sysm{\forall x . letter' x \rightarrow \exists e . writing' e \land patient' e\, x \land agent' e\, john' \land true'}
+
+
+\ex.
+\a.  NOM every woman wrote ACC every letter .
+\b. \sysm{\forall x . woman' x \rightarrow \forall y . letter' y \rightarrow \exists e . wrote' e \land patient' e y \land agent' e x \land true'}
+
+
+\question[20]
+
+Once the above issues are fixed, adverbial modification can be taken care of. Your lexicon should be able to derive the following:
+
+\ex.
+\a. NOM every woman wrote ACC every letter with a pen .
+\b. \sysm{\forall x . woman' x \rightarrow \exists y . pen' y \land \forall z . letter' z \rightarrow \exists e . writing' e \land patient' e\, z \land agent' e\, x \land instr' e\, y \land true'}
+
+
+\ex.
+\a. NOM every woman wrote ACC every letter at a desk with a blue pen .
+\b. \sysm{\forall x . woman' x \rightarrow \exists y . pen' y \land \exists z . desk' z \land \forall s . letter' s \rightarrow \exists e . writing' e \land patient' e\, s \land agent' e\, x \land loc' e\, z \land instr' e\, y \land true'}
+
+
+and, so on\ldots
+
+\end{questions}
+\end{document}
